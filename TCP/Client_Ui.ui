@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
+    <width>762</width>
     <height>610</height>
    </rect>
   </property>
@@ -241,7 +241,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
     <rect>
      <x>0</x>
      <y>1</y>
-     <width>660</width>
+     <width>671</width>
      <height>40</height>
     </rect>
    </property>
@@ -327,37 +327,6 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="text">
     <string>Turn Right</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_Video">
-   <property name="geometry">
-    <rect>
-     <x>1</x>
-     <y>42</y>
-     <width>400</width>
-     <height>300</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Malgun Gothic</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="whatsThis">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="Btn_Down">
@@ -473,7 +442,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
   <widget class="QPushButton" name="Window_Close">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>720</x>
      <y>1</y>
      <width>50</width>
      <height>40</height>
@@ -493,7 +462,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    <property name="geometry">
     <rect>
      <x>710</x>
-     <y>460</y>
+     <y>480</y>
      <width>41</width>
      <height>31</height>
     </rect>
@@ -543,7 +512,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    <property name="geometry">
     <rect>
      <x>680</x>
-     <y>410</y>
+     <y>430</y>
      <width>22</width>
      <height>160</height>
     </rect>
@@ -595,7 +564,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
   <widget class="QPushButton" name="Window_Min">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>670</x>
      <y>1</y>
      <width>50</width>
      <height>40</height>
@@ -670,21 +639,21 @@ color: rgb(0, 85, 255);
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>402</x>
-     <y>80</y>
-     <width>361</width>
+     <x>410</x>
+     <y>130</y>
+     <width>351</width>
      <height>31</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1,1,1,1,1,1,1,1">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,1,1,1,1,1,1">
     <property name="spacing">
      <number>2</number>
     </property>
     <property name="leftMargin">
-     <number>5</number>
+     <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>10</number>
+     <number>2</number>
     </property>
     <item>
      <widget class="QPushButton" name="Led_Module">
@@ -703,12 +672,15 @@ color: rgb(0, 85, 255);
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="W">
+     <widget class="QPushButton" name="W">
       <property name="font">
        <font>
         <family>Malgun Gothic</family>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>N</string>
@@ -724,7 +696,7 @@ color: rgb(0, 85, 255);
        </font>
       </property>
       <property name="text">
-       <string>0</string>
+       <string>4095</string>
       </property>
       <property name="maxLength">
        <number>32767</number>
@@ -732,15 +704,18 @@ color: rgb(0, 85, 255);
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="R">
+     <widget class="QPushButton" name="RGB">
       <property name="font">
        <font>
         <family>Malgun Gothic</family>
         <pointsize>10</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
-       <string>R</string>
+       <string>RGB</string>
       </property>
      </widget>
     </item>
@@ -758,19 +733,6 @@ color: rgb(0, 85, 255);
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="G">
-      <property name="font">
-       <font>
-        <family>Malgun Gothic</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>G</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QLineEdit" name="Color_G">
       <property name="font">
        <font>
@@ -784,19 +746,6 @@ color: rgb(0, 85, 255);
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="B">
-      <property name="font">
-       <font>
-        <family>Malgun Gothic</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>B</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QLineEdit" name="Color_B">
       <property name="font">
        <font>
@@ -805,7 +754,7 @@ color: rgb(0, 85, 255);
        </font>
       </property>
       <property name="text">
-       <string>0</string>
+       <string>100</string>
       </property>
      </widget>
     </item>
@@ -815,14 +764,20 @@ color: rgb(0, 85, 255);
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>130</y>
+     <y>171</y>
      <width>131</width>
-     <height>171</height>
+     <height>161</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,1">
     <property name="spacing">
      <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
     </property>
     <item>
      <widget class="QCheckBox" name="checkBox_Led_Mode1">
@@ -882,8 +837,8 @@ color: rgb(0, 85, 255);
    <property name="geometry">
     <rect>
      <x>419</x>
-     <y>310</y>
-     <width>321</width>
+     <y>340</y>
+     <width>331</width>
      <height>41</height>
     </rect>
    </property>
@@ -945,8 +900,8 @@ color: rgb(0, 85, 255);
    <property name="geometry">
     <rect>
      <x>420</x>
-     <y>360</y>
-     <width>321</width>
+     <y>380</y>
+     <width>331</width>
      <height>41</height>
     </rect>
    </property>
@@ -1008,12 +963,12 @@ color: rgb(0, 85, 255);
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>360</y>
+     <y>390</y>
      <width>381</width>
-     <height>51</height>
+     <height>31</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,2,1">
+   <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,1">
     <property name="spacing">
      <number>20</number>
     </property>
@@ -1074,14 +1029,20 @@ color: rgb(0, 85, 255);
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>130</y>
+     <y>171</y>
      <width>131</width>
-     <height>171</height>
+     <height>161</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1,1,1">
     <property name="spacing">
      <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
     </property>
     <item>
      <widget class="QCheckBox" name="checkBox_Matrix_Mode1">
@@ -1178,13 +1139,328 @@ color: rgb(0, 85, 255);
     </item>
    </layout>
   </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_6">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>70</y>
+     <width>351</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QCheckBox" name="L1">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L2">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L3">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L4">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L5">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>5</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L6">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>6</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_7">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>100</y>
+     <width>351</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_8">
+    <item>
+     <widget class="QCheckBox" name="L7">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>7</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L8">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>8</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L9">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>9</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L10">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>10</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L11">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>11</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="L12">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>12</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_8">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1,1">
+    <property name="spacing">
+     <number>20</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <widget class="QPushButton" name="Btn_Cam_Left">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Left-90°</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Btn_Cam_Origin">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Origin-0°</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Btn_Cam_Right">
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Right-90°</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_Video">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>401</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Malgun Gothic</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <zorder>label_Servo2</zorder>
   <zorder>Btn_ForWard</zorder>
   <zorder>name</zorder>
   <zorder>Btn_Turn_Left</zorder>
   <zorder>Btn_BackWard</zorder>
   <zorder>Btn_Turn_Right</zorder>
-  <zorder>label_Video</zorder>
   <zorder>Btn_Down</zorder>
   <zorder>Btn_Left</zorder>
   <zorder>Btn_Home</zorder>
@@ -1204,6 +1480,10 @@ color: rgb(0, 85, 255);
   <zorder>horizontalLayoutWidget_4</zorder>
   <zorder>verticalLayoutWidget_2</zorder>
   <zorder>horizontalLayoutWidget_5</zorder>
+  <zorder>horizontalLayoutWidget_6</zorder>
+  <zorder>horizontalLayoutWidget_7</zorder>
+  <zorder>horizontalLayoutWidget_8</zorder>
+  <zorder>label_Video</zorder>
  </widget>
  <resources>
   <include location="picture.qrc"/>

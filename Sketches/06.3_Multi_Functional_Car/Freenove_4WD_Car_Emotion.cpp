@@ -277,17 +277,17 @@ void Emotion_Show(int mode)
   if (mode == 0)
     clearEmtions();
   else if (mode == 1)
-    eyesRotate(150);
+    eyesRotate(150);   
   else if (mode == 2)
-    eyesBlink(100);
+    eyesCry(200); 
   else if (mode == 3)
-    eyesSmile(200);
+    eyesSmile(200);                  
   else if (mode == 4)
-    eyesCry(200);
-  else if (mode == 5)
     wheel(2, 100);
-  else if (mode == 6)
+  else if (mode == 5)
     wheel(1, 100);
+  else if (mode == 6)
+    eyesBlink(100);    
 }
 
 //Emotion set mode

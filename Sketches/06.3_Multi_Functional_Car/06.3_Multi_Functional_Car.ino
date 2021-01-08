@@ -88,6 +88,10 @@ void loop() {
           else if (paramters[1] == 1)
             Servo_2_Angle(paramters[2]);
         }
+        else if (CmdArray[0] == CMD_CAMERA) {//Network control servo motor movement command
+            Servo_1_Angle(paramters[1]);
+            Servo_2_Angle(paramters[2]);
+        }
         else if (CmdArray[0] == CMD_LIGHT) { //Light seeking car command
           if (paramters[1] == 1)
             Car_SetMode(1);
@@ -99,6 +103,9 @@ void loop() {
             Car_SetMode(2);
           else if (paramters[1] == 0)
             Car_SetMode(0);
+        }
+        else if (CmdArray[0] == CMD_CAR_MODE) { //Car command Mode
+          Car_SetMode(paramters[1]);
         }
         //Clears the command array and parameter array
         memset(CmdArray, 0, sizeof(CmdArray));

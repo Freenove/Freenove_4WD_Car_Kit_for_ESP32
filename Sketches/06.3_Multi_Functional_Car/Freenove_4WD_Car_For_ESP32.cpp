@@ -22,7 +22,7 @@ void PCA9685_Setup(void)
 //Set the rotation parameters of servo 1, and the parameters are 0-180 degrees
 void Servo_1_Angle(int angle)
 {
-  float s1_angle = 180 - constrain(angle, 0, 180);
+  float s1_angle = constrain(angle, 0, 180);
   if (s1_angle == 0)
     s1_angle = 102;
   else if (s1_angle == 180)

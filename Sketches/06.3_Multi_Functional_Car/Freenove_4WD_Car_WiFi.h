@@ -9,12 +9,16 @@
 #define CMD_POWER           "CMD_POWER"           //Power control command
 #define CMD_BUZZER          "CMD_BUZZER"          //BUZZER control command
 #define CMD_SERVO           "CMD_SERVO"           //SERVO control command
+#define CMD_CAMERA          "CMD_CAMERA"          //SERVO control command
+
 #define CMD_LED_MOD         "CMD_LED_MOD"         //WS2812 control command
 #define CMD_LED             "CMD_LED"             //WS2812 color command
 #define CMD_MATRIX_MOD      "CMD_MATRIX_MOD"      //LED MATRIX control command
 #define CMD_VIDEO           "CMD_VIDEO"           //VIDEO control command
 #define CMD_LIGHT           "CMD_LIGHT"           //LIGHT Car control command
 #define CMD_TRACK           "CMD_TRACK"           //TRACK Car control command
+#define CMD_CAR_MODE        "CMD_CAR_MODE"        //Car control command
+
 
 
 

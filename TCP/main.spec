@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['D:\\PC\\Freenove_4WD_Car_Kit_for_ESP32\\TCP'],
+             pathex=['D:\\pycharm-code\\TCP'],
              binaries=[],
              datas=[],
              hiddenimports=[],
