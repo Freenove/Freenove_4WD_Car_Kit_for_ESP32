@@ -46,6 +46,9 @@ void setup() {
 
   disableCore0WDT();        //Turn off the watchdog function in kernel 0
   xTaskCreateUniversal(loopTask_Camera, "loopTask_Camera", 8192, NULL, 0, NULL, 0);
+  Buzzer_Alarm(1);
+  delay(100);
+  Buzzer_Alarm(0);
 }
 
 void loop() {

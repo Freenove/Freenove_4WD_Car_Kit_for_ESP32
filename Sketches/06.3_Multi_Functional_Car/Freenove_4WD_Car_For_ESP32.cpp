@@ -229,12 +229,12 @@ void Light_Car(int mode)
     if (Get_Photosensitive() < (light_init_value - 100))
     {
       Motor_Move(-2000, -2000, 2000, 2000);
-      Emotion_SetMode(5);
+      Emotion_SetMode(4);
     }
     else if (Get_Photosensitive() > (light_init_value + 100))
     {
       Motor_Move(2000, 2000, -2000, -2000);
-      Emotion_SetMode(6);
+      Emotion_SetMode(5);
     }
     else
     {
@@ -286,17 +286,17 @@ void Track_Car(int mode)
         break;
       case 0:   //000
       case 7:   //111
-        Emotion_SetMode(2);
+        Emotion_SetMode(6);
         Motor_Move(0, 0, 0, 0);                                    //Stop
         break;
       case 1:   //001
       case 3:   //011
-        Emotion_SetMode(5);
+        Emotion_SetMode(4);
         Motor_Move(-SPEED_LV3, -SPEED_LV3, SPEED_LV4, SPEED_LV4);  //Turn Left
         break;
       case 4:   //100
       case 6:   //110
-        Emotion_SetMode(6);
+        Emotion_SetMode(5);
         Motor_Move(SPEED_LV4, SPEED_LV4 , - SPEED_LV3, -SPEED_LV3);//Turn Right
         break;
 
