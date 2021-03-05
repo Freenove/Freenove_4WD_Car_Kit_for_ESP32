@@ -15,6 +15,7 @@ void PCA9685_Setup(void)
   Wire.begin(PCA9685_SDA, PCA9685_SCL);
   pca9685.setupSingleDevice(Wire, PCA9685_ADDRESS);
   pca9685.setToFrequency(FREQUENCY);
+  Motor_Move(0,0,0,0);
   Servo_1_Angle(90);
   Servo_2_Angle(90);
 }
@@ -185,7 +186,7 @@ void Buzzer_Alert(int beat, int rebeat)
 ////////////////////Battery drive area/////////////////////////////////////
 #define PIN_BATTERY        32        //Set the battery detection voltage pin
 float batteryVoltage     = 0;        //Battery voltage variable
-float batteryCoefficient = 4;        //Set the proportional coefficient
+float batteryCoefficient = 3.7;        //Set the proportional coefficient
 
 //Gets the battery ADC value
 int Get_Battery_Voltage_ADC(void)
