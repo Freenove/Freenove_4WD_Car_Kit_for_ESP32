@@ -1,6 +1,4 @@
 #include "Freenove_4WD_Car_WiFi.h"
-#include "Freenove_4WD_Car_For_ESP32.h"
-
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiClient.h>
@@ -11,93 +9,46 @@ char* ssid_Router     =   "********";    //Modify according to your router name
 char* password_Router =   "********";    //Modify according to your router password
 char* ssid_AP         =   "Sunshine";    //ESP32 turns on an AP and calls it Sunshine
 char* password_AP     =   "Sunshine";    //Set your AP password for ESP32 to Sunshine
-
-IPAddress local_IP(192, 168, 4, 1);
-IPAddress gateway(192, 168, 4, 1);
-IPAddress subnet(255, 255, 255, 0);
-
 //Initialize WiFi function
 void WiFi_Setup(void)
 {
-#ifdef WIFI_STA_MODE
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid_Router, password_Router);
-  WiFi.setSleep(false);
-  WiFi.setAutoConnect(true);
-  WiFi.setAutoReconnect(true);
-
-  Serial.print("\nWaiting for WiFi... ");
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(500);
-  }
-  IPAddress local_ip = WiFi.localIP();
-  Serial.println("");
-  Serial.println("\nWiFi connected");
-  Serial.print("Use your phone to connect to WiFi: ");
-  Serial.println(ssid_Router);
-  Serial.print("\nThe password for WiFi is: ");
-  Serial.println(password_Router);
-  Serial.print("\nThen you can enter: '");
-  Serial.print(local_ip);
-  Serial.println("' to connect the car in Freenove app.");
-  Buzzer_Alarm(1);
-  delay(100);
-  Buzzer_Alarm(0);
-#else
+  WiFi.softAP(ssid_AP, password_AP);//Turn on the router
   WiFi.disconnect(true);
-  WiFi.mode(WIFI_AP);
-  WiFi.softAPConfig(local_IP, gateway, subnet);
-  WiFi.softAP(ssid_AP, password_AP);
-
-  Serial.print("\nUse your phone to connect to WiFi: ");
-  Serial.println(ssid_AP);
-  Serial.print("\nThe password for WiFi is: ");
-  Serial.println(password_AP);
-  Serial.print("\nThen you can enter: '");
-  Serial.print(local_IP);
-  Serial.println("' to connect the car in Freenove app.");
-  Buzzer_Alarm(1);
-  delay(100);
-  Buzzer_Alarm(0);
-#endif
-}
-
-int wtdFlag = 0;
-void loopTask_WTD(void *pvParameters) {
-  while (1)
+  WiFi.begin(ssid_Router, password_Router);
+  Serial.print("Connecting ");
+  Serial.print(ssid_Router);
+  int timeout = 0;
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    timeout++;
+    WiFi.begin(ssid_Router, password_Router);
+    if (timeout >= 20)
+      break;
+  }
+  IPAddress ap_ip = WiFi.softAPIP();
+  IPAddress local_ip = WiFi.localIP();
+  if (timeout >= 20)
   {
-#ifdef WIFI_STA_MODE
-    if ((WiFi.isConnected() == 0) && wtdFlag == 0)
-    {
-      delay(100);
-    }
-    else if ((WiFi.isConnected() != 0) && wtdFlag == 0)
-    {
-      wtdFlag = 1;
-      delay(100);
-    }
-    else if ((WiFi.isConnected() == 0) && wtdFlag == 1)
-    {
-      wtdFlag = 0;
-      ESP.restart();
-    }
-#else
-    if ((WiFi.softAPgetStationNum() == 0) && wtdFlag == 0)
-    {
-      delay(100);
-    }
-    else if ((WiFi.softAPgetStationNum() != 0) && wtdFlag == 0)
-    {
-      wtdFlag = 1;
-      delay(100);
-    }
-    else if ((WiFi.softAPgetStationNum() == 0) && wtdFlag == 1)
-    {
-      wtdFlag = 0;
-      ESP.restart();
-    }
-#endif
+    Serial.println("\nWiFi connect failed");
+    Serial.print("Use your phone to connect to WiFi: '");
+    Serial.print(ssid_AP);
+    Serial.print("'\nThe password for WiFi is: '");
+    Serial.print(password_AP);
+    Serial.print("'\nThen you can enter: '");
+    Serial.print(ap_ip);
+    Serial.println("' to connect the car in Freenove app.");
+  }
+  else
+  {
+    Serial.println("\nWiFi connected.");
+    Serial.print("Use your phone to connect to WiFi: '");
+    Serial.print(ssid_Router);
+    Serial.print("'\nThe password for WiFi is: '");
+    Serial.print(password_Router);
+    Serial.print("'\nThen you can enter: '");
+    Serial.print(local_ip);
+    Serial.println("' to connect the car in Freenove app.");
   }
 }
 
