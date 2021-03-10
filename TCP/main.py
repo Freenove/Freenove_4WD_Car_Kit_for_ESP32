@@ -494,6 +494,7 @@ class mywindow(QMainWindow,Ui_Client):
             self.L10.setChecked(False)
             self.L11.setChecked(False)
             self.L12.setChecked(False)
+            self.Color_W.setText("0")
         else:
             self.W_flag = 0
             self.L1.setChecked(True)
@@ -508,6 +509,7 @@ class mywindow(QMainWindow,Ui_Client):
             self.L10.setChecked(True)
             self.L11.setChecked(True)
             self.L12.setChecked(True)
+            self.Color_W.setText("4095")
 
 
 
@@ -571,7 +573,7 @@ class mywindow(QMainWindow,Ui_Client):
             self.Color_B.setText(str(int(color_palette[5:7], 16)))
         if b.text() == "Led_Module":
             if self.commandFlag:
-                color = self.Color_W.text() + self.intervalChar + self.Color_R.text() + self.intervalChar + self.Color_G.text() + self.intervalChar + self.Color_B.text() + self.endChar
+                color = self.Color_W.text() + self.intervalChar + self.Color_G.text() + self.intervalChar + self.Color_R.text() + self.intervalChar + self.Color_B.text() + self.endChar
                 self.TCP.sendData(cmd.CMD_LED + self.intervalChar + color + self.endChar)
         if b.text() == "Led_Mode1":
            if b.isChecked() == True:
