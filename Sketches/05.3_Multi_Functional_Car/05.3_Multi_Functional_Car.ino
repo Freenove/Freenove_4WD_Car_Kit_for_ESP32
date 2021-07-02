@@ -56,67 +56,84 @@ void handleControl(unsigned long value)
   // Handle the commands
   switch (value) {
     case 0xFF02FD:// Receive the number '+'
+    case 0xD7E84B1B:
       Motor_Move(2000,2000,2000,2000);
       break;
     case 0xFF9867:// Receive the number '-'
+    case 0x97483BFB:
       Motor_Move(-2000,-2000,-2000,-2000);
       break;
     case 0xFFE01F:// Receive the number '|<<'
+    case 0xF076C13B:
       Motor_Move(-2000,-2000,2000,2000);
       delay(200);
       Motor_Move(0,0,0,0);
       break;
     case 0xFF906F:// Receive the number '>>|'
+    case 0xE5CFBD7F:
       Motor_Move(2000,2000,-2000,-2000);
       delay(200);
       Motor_Move(0,0,0,0);      
       break;
     case 0xFFA857:// Receive the number '▶'
+    case 0xA3C8EDDB:
       Motor_Move(0,0,0,0);
       break;
     case 0xFF6897:// Receive the number '0'
+    case 0xC101E57B:
       servo_1_angle=servo_1_angle+10;
       Servo_1_Angle(servo_1_angle);
       break;
     case 0xFF30CF:// Receive the number '1'
+    case 0x9716BE3F:
       servo_1_angle=servo_1_angle-10;
       Servo_1_Angle(servo_1_angle);
       break;   
     case 0xFF10EF:// Receive the number '4'
+    case 0x8C22657B:
       servo_1_angle=90;
       Servo_1_Angle(servo_1_angle);
       break; 
     case 0xFFB04F:// Receive the number 'C'
+    case 0xF0C41643:
       servo_2_angle=servo_2_angle+10;
       Servo_2_Angle(servo_2_angle);
       break;      
     case 0xFF7A85:// Receive the number '3'
+    case 0x6182021B:
       servo_2_angle=servo_2_angle-10;
       Servo_2_Angle(servo_2_angle);
       break;
     case 0xFF5AA5:// Receive the number '6'
+    case 0x449E79F:
       servo_2_angle=90;
       Servo_2_Angle(servo_2_angle);
       break;      
     case 0xFF22DD:// Receive the number 'TEST'
+    case 0x52A3D41F:
       Buzzer_Alert(1,1);
       break;
     case 0xFF18E7:// Receive the number '2'
+    case 0x3D9AE3F7:
       emotion_flag=millis()%21;
       staticEmtions(emotion_flag);
       break;
     case 0xFF38C7:// Receive the number '5'
+    case 0x488F3CBB:
       clearEmtions();
       break;
     case 0xFF42BD:// Receive the number '7'
+    case 0x32C6FDF7:
       ws2812_flag=millis()%4;
       WS2812_Show();
       break;
     case 0xFF4AB5:// Receive the number '8'
+    case 0x1BC0157B:
       ws2812_flag=4;
       WS2812_Show();
       break; 
     case 0xFF52AD:// Receive the number '9'
+    case 0x3EC3FC1B:
       break;  
     case 0xFFFFFFFF:// Remain unchanged
       break;

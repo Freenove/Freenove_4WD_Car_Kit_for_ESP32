@@ -39,6 +39,7 @@ void handleControl(unsigned long value) {
   // Handle the commands
   switch (value) {
     case 0xFF02FD:// Receive the number '+'
+    case 0xD7E84B1B:
       motor_flag = 1;
       Motor_Move(motor_speed, motor_speed, motor_speed, motor_speed);     // Go forward
       delay(200);
@@ -46,6 +47,7 @@ void handleControl(unsigned long value) {
       break;
 
     case 0xFF9867:// Receive the number '-'
+    case 0x97483BFB:
       motor_flag = 2;
       Motor_Move(-motor_speed, -motor_speed, -motor_speed, -motor_speed); // Back up
       delay(200);
@@ -53,6 +55,7 @@ void handleControl(unsigned long value) {
       break;
 
     case 0xFFE01F:// Receive the number '|<<'
+    case 0xF076C13B:
       motor_flag = 3;
       Motor_Move(-motor_speed, -motor_speed, motor_speed, motor_speed);   // Turn left
       delay(200);
@@ -60,6 +63,7 @@ void handleControl(unsigned long value) {
       break;
 
     case 0xFF906F:// Receive the number '>>|'
+    case 0xE5CFBD7F:
       motor_flag = 4;
       Motor_Move(motor_speed, motor_speed, -motor_speed, -motor_speed);   // Turn right
       delay(200);
@@ -67,6 +71,7 @@ void handleControl(unsigned long value) {
       break;
 
     case 0xFF6897:// Receive the number '0'
+    case 0xC101E57B:
       emotionMode = millis() % 10;
       break;
 
