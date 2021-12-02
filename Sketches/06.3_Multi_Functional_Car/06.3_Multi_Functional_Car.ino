@@ -19,7 +19,7 @@ String CmdArray[8];
 int paramters[8];
 bool videoFlag = 0;
 
-void WiFi_Init(){
+void WiFi_Init() {
   ssid_Router     =   "********";    //Modify according to your router name
   password_Router =   "********";    //Modify according to your router password
   ssid_AP         =   "Sunshine";    //ESP32 turns on an AP and calls it Sunshine
@@ -38,7 +38,7 @@ void setup() {
   WiFi_Setup(1);            //Start AP Mode
   server_Cmd.begin(4000);   //Start the command server
   server_Camera.begin(7000);//Turn on the camera server
-  
+
   cameraSetup();            //Camera initialization
   Emotion_Setup();          //Emotion initialization
   WS2812_Setup();           //WS2812 initialization
@@ -143,6 +143,7 @@ void loopTask_Camera(void *pvParameters) {
               client.write(slen, 4);
               client.write(fb->buf, fb->len);
               Serial.println("Camera send");
+              esp_camera_fb_return(fb);
             }
           }
         }
