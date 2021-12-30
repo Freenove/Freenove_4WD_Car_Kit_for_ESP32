@@ -2,7 +2,7 @@
   Filename    : Camera Tcp Serrver
   Product     : Freenove 4WD Car for ESP32
   Auther      : www.freenove.com
-  Modification: 2020/12/18
+  Modification: 2021/12/02
 **********************************************************************/
 
 #include <WiFi.h>
@@ -30,11 +30,11 @@ void setup() {
   Serial.print("Connecting ");
   Serial.print(ssid_Router);
   int timeout=0;
-  while (WiFi.status() != WL_CONNECTED) { //If the connection fails, wait half a second for another connection request
+  while (WiFi.isConnected() != true) { //If the connection fails, wait half a second for another connection request
     delay(500);
     Serial.print(".");
     timeout++;
-    WiFi.begin(ssid_Router, password_Router);
+    //WiFi.begin(ssid_Router, password_Router);
     if(timeout==20)
       break;
   }

@@ -14,7 +14,7 @@
 #include "Freenove_WS2812_Lib_for_ESP32.h"
 
 Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(12, 32, 0, TYPE_GRB);
-u8 m_color[5][3] = { {255, 0, 0}, {0, 255, 0}, {0, 0, 255}, {255, 255, 255}, {0, 0, 0} };
+byte m_color[5][3] = { {255, 0, 0}, {0, 255, 0}, {0, 0, 255}, {255, 255, 255}, {0, 0, 0} };
 
 
 #define RECV_PIN     0        // Infrared receiving pin

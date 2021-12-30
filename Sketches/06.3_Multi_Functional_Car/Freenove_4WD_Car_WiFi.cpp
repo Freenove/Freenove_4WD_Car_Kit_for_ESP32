@@ -30,7 +30,7 @@ void WiFi_Setup(bool WiFi_Mode)
     WiFi.setAutoReconnect(true);
 
     Serial.print("\nWaiting for WiFi... ");
-    while (WiFi.status() != WL_CONNECTED) {
+    while (WiFi.isConnected() != true) {
       Serial.print(".");
       delay(500);
     }
