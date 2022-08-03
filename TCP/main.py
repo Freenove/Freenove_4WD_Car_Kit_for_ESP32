@@ -511,10 +511,6 @@ class mywindow(QMainWindow,Ui_Client):
             self.L12.setChecked(True)
             self.Color_W.setText("4095")
 
-
-
-
-
     def WS2812_Calculate(self):
         if self.L1.isChecked() == True:
             self.ws2812_number=self.ws2812_number|0x01
