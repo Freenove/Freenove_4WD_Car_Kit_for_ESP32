@@ -103,7 +103,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Malgun Gothic</family>
+    <family>Arial</family>
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -212,7 +212,7 @@ margin-right:-4px;
 border-radius:6px;
 background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,stop:0.6 #565656,stop:0.8 #565656);
 }
-</string>
+font: 10pt &quot;Arial&quot;;</string>
   </property>
   <widget class="QPushButton" name="Btn_ForWard">
    <property name="geometry">
@@ -225,12 +225,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>ForWard</string>
@@ -247,14 +250,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>28</pointsize>
      <weight>50</weight>
+     <italic>false</italic>
      <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 28pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Freenove</string>
@@ -274,12 +278,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Turn Left</string>
@@ -296,12 +303,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>BackWard</string>
@@ -318,12 +328,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Turn Right</string>
@@ -340,12 +353,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Down</string>
@@ -362,12 +378,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Left</string>
@@ -384,12 +403,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Home</string>
@@ -406,12 +428,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Up</string>
@@ -428,12 +453,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Right</string>
@@ -450,9 +478,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
-     <pointsize>9</pointsize>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>×</string>
@@ -469,9 +503,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>90</string>
@@ -491,7 +531,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
     </font>
    </property>
@@ -519,7 +559,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>9</pointsize>
     </font>
    </property>
@@ -550,9 +590,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>90</string>
@@ -572,9 +618,15 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
-     <pointsize>9</pointsize>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>-</string>
@@ -591,7 +643,7 @@ background:qradialgradient(spread:pad,cx:0.5,cy:0.5,radius:0.5,fx:0.5,fy:0.5,sto
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
     </font>
    </property>
@@ -611,7 +663,7 @@ QProgressBar {
 text-align: center; 
 color: rgb(0, 85, 255);
 }
-</string>
+font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="value">
     <number>0</number>
@@ -628,9 +680,15 @@ color: rgb(0, 85, 255);
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>Buzzer</string>
@@ -644,6 +702,12 @@ color: rgb(0, 85, 255);
      <width>351</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,1,1,1,1,1,1">
     <property name="spacing">
@@ -659,12 +723,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Led_Module">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Led_Module</string>
@@ -675,12 +742,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="W">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>N</string>
@@ -691,9 +761,15 @@ color: rgb(0, 85, 255);
      <widget class="QLineEdit" name="Color_W">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>4095</string>
@@ -707,12 +783,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="RGB">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>RGB</string>
@@ -723,9 +802,15 @@ color: rgb(0, 85, 255);
      <widget class="QLineEdit" name="Color_R">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>0</string>
@@ -736,9 +821,15 @@ color: rgb(0, 85, 255);
      <widget class="QLineEdit" name="Color_G">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>0</string>
@@ -749,9 +840,15 @@ color: rgb(0, 85, 255);
      <widget class="QLineEdit" name="Color_B">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>100</string>
@@ -769,6 +866,12 @@ color: rgb(0, 85, 255);
      <height>161</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,1">
     <property name="spacing">
      <number>10</number>
@@ -783,9 +886,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Led_Mode1">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Led_Mode1</string>
@@ -796,9 +905,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Led_Mode2">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Led_Mode2</string>
@@ -809,9 +924,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Led_Mode3">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Led_Mode3</string>
@@ -822,9 +943,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Led_Mode4">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Led_Mode4</string>
@@ -842,14 +969,26 @@ color: rgb(0, 85, 255);
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,4,1">
     <item>
      <widget class="QLabel" name="Servo1">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
-        <pointsize>9</pointsize>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Servo 1</string>
@@ -863,7 +1002,7 @@ color: rgb(0, 85, 255);
      <widget class="QSlider" name="HSlider_FineServo1">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -882,9 +1021,15 @@ color: rgb(0, 85, 255);
      <widget class="QLabel" name="label_FineServo1">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>0</string>
@@ -905,14 +1050,26 @@ color: rgb(0, 85, 255);
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,4,1">
     <item>
      <widget class="QLabel" name="Servo2">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Servo 2</string>
@@ -926,7 +1083,7 @@ color: rgb(0, 85, 255);
      <widget class="QSlider" name="HSlider_FineServo2">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -945,9 +1102,15 @@ color: rgb(0, 85, 255);
      <widget class="QLabel" name="label_FineServo2">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>0</string>
@@ -968,6 +1131,12 @@ color: rgb(0, 85, 255);
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,1">
     <property name="spacing">
      <number>20</number>
@@ -979,12 +1148,15 @@ color: rgb(0, 85, 255);
      <widget class="QLineEdit" name="IP">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>IP Address</string>
@@ -998,9 +1170,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Btn_Connect">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Connect</string>
@@ -1011,12 +1189,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Btn_Video">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Open Video</string>
@@ -1034,6 +1215,12 @@ color: rgb(0, 85, 255);
      <height>161</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1,1,1">
     <property name="spacing">
      <number>10</number>
@@ -1048,9 +1235,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Matrix_Mode1">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Matrix_Mode1</string>
@@ -1061,9 +1254,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Matrix_Mode2">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Matrix_Mode2</string>
@@ -1074,9 +1273,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Matrix_Mode3">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Matrix_Mode3</string>
@@ -1087,9 +1292,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="checkBox_Matrix_Mode4">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Matrix_Mode4</string>
@@ -1107,6 +1318,12 @@ color: rgb(0, 85, 255);
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_5">
     <property name="spacing">
      <number>0</number>
@@ -1115,9 +1332,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Light">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Light off</string>
@@ -1128,9 +1351,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Track">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Track off</string>
@@ -1148,14 +1377,26 @@ color: rgb(0, 85, 255);
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_6">
     <item>
      <widget class="QCheckBox" name="L1">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>1</string>
@@ -1169,9 +1410,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L2">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>2</string>
@@ -1185,9 +1432,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L3">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>3</string>
@@ -1201,9 +1454,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L4">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>4</string>
@@ -1217,9 +1476,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L5">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>5</string>
@@ -1233,9 +1498,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L6">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>6</string>
@@ -1256,14 +1527,26 @@ color: rgb(0, 85, 255);
      <height>30</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_8">
     <item>
      <widget class="QCheckBox" name="L7">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>7</string>
@@ -1277,9 +1560,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L8">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>8</string>
@@ -1293,9 +1582,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L9">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>9</string>
@@ -1309,9 +1604,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L10">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>10</string>
@@ -1325,9 +1626,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L11">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>11</string>
@@ -1341,9 +1648,15 @@ color: rgb(0, 85, 255);
      <widget class="QCheckBox" name="L12">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>12</string>
@@ -1364,6 +1677,12 @@ color: rgb(0, 85, 255);
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1,1">
     <property name="spacing">
      <number>20</number>
@@ -1378,12 +1697,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Btn_Cam_Left">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Left-90°</string>
@@ -1394,12 +1716,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Btn_Cam_Origin">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Origin-0°</string>
@@ -1410,12 +1735,15 @@ color: rgb(0, 85, 255);
      <widget class="QPushButton" name="Btn_Cam_Right">
       <property name="font">
        <font>
-        <family>Malgun Gothic</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 10pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
        <string>Right-90°</string>
@@ -1435,8 +1763,11 @@ color: rgb(0, 85, 255);
    </property>
    <property name="font">
     <font>
-     <family>Malgun Gothic</family>
+     <family>Arial</family>
      <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="toolTip">
@@ -1446,7 +1777,7 @@ color: rgb(0, 85, 255);
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 10pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string/>
