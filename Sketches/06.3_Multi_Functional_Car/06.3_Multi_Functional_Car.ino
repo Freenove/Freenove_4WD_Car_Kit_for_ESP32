@@ -64,7 +64,7 @@ void loop() {
         if (CmdArray[0] == CMD_LED_MOD)//Set the display mode of car colored lights
           WS2812_SetMode(paramters[1]);
         if (CmdArray[0] == CMD_LED) //Set the color and brightness of the car lights
-          WS2812_Set_Color_1(paramters[1], paramters[3], paramters[2], paramters[4]);
+          WS2812_Set_Color_1(paramters[1], paramters[2], paramters[3], paramters[4]);
         if (CmdArray[0] == CMD_MATRIX_MOD)//Set the display mode of the LED matrix
           Emotion_SetMode(paramters[1]);
         if (CmdArray[0] == CMD_VIDEO)//Video transmission command
