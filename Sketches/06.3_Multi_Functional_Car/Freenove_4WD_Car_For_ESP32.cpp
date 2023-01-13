@@ -53,6 +53,10 @@ void Servo_2_Angle(int angle)
 //A function to control the car motor
 void Motor_Move(int m1_speed, int m2_speed, int m3_speed, int m4_speed)
 {
+  m1_speed = MOTOR_DIRECTION * constrain(m1_speed, MOTOR_SPEED_MIN, MOTOR_SPEED_MAX);
+  m2_speed = MOTOR_DIRECTION * constrain(m2_speed, MOTOR_SPEED_MIN, MOTOR_SPEED_MAX);
+  m3_speed = MOTOR_DIRECTION * constrain(m3_speed, MOTOR_SPEED_MIN, MOTOR_SPEED_MAX);
+  m4_speed = MOTOR_DIRECTION * constrain(m4_speed, MOTOR_SPEED_MIN, MOTOR_SPEED_MAX);
   if (m1_speed > 0)
   {
     m1_speed = constrain(m1_speed, 1600, 4095);

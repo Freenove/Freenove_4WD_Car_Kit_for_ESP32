@@ -5,6 +5,8 @@
 #include <PCA9685.h>
 #include <PCF8574.h>
 
+#define MOTOR_DIRECTION     -1 //If the direction is reversed, change 1 to -1
+
 /////////////////////PCA9685 drive area////////////////////////////////
 #define PCA9685_SDA 13               //Define SDA pins
 #define PCA9685_SCL 14               //Define SCL pins
@@ -12,6 +14,9 @@
 #define FREQUENCY          50        //Define the operating frequency of servo
 #define PCA9685_CHANNEL_0  0         //Define PCA9685 channel to control servo 1
 #define PCA9685_CHANNEL_1  1         //Define the PCA9685 channel to control servo 2
+#define SERVO_MIDDLE_POINT 1500  //Define the middle position of the servo
+#define MOTOR_SPEED_MIN -4095    //Define a minimum speed limit for wheels
+#define MOTOR_SPEED_MAX 4095     //Define a maximum speed limit for wheels
 #define PIN_MOTOR_M1_IN1  15         //Define the positive pole of M1
 #define PIN_MOTOR_M1_IN2  14         //Define the negative pole of M1
 #define PIN_MOTOR_M2_IN1  9          //Define the positive pole of M2

@@ -35,7 +35,7 @@ void setup() {
   Serial.begin(115200);
   Serial.setDebugOutput(true);
   WiFi_Init();              //WiFi paramters initialization
-  WiFi_Setup(1);            //Start AP Mode
+  WiFi_Setup(1);            //Start AP Mode. If you want to connect to a router, change 1 to 0.
   server_Cmd.begin(4000);   //Start the command server
   server_Camera.begin(7000);//Turn on the camera server
 
