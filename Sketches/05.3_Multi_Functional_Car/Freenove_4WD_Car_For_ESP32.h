@@ -4,7 +4,10 @@
 #include <Arduino.h>
 #include <PCA9685.h>
 
-#define MOTOR_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_1_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_2_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_3_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_4_DIRECTION     1 //If the direction is reversed, change 1 to -1
 
 void PCA9685_Close_Com_Address(void);//Close the PCA9685 public address
 

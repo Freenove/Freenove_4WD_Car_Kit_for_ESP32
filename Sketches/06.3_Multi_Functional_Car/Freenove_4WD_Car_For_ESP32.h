@@ -5,7 +5,10 @@
 #include <PCA9685.h>
 #include <PCF8574.h>
 
-#define MOTOR_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_1_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_2_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_3_DIRECTION     1 //If the direction is reversed, change 1 to -1
+#define MOTOR_4_DIRECTION     1 //If the direction is reversed, change 1 to -1
 
 /////////////////////PCA9685 drive area////////////////////////////////
 #define PCA9685_SDA 13               //Define SDA pins
