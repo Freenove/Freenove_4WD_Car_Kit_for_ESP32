@@ -141,9 +141,8 @@ void Motor_Move(int m1_speed, int m2_speed, int m3_speed, int m4_speed)
 void Buzzer_Setup(void)
 {
   pinMode(PIN_BUZZER, OUTPUT);
-  ledcSetup(BUZZER_CHN, BUZZER_FREQUENCY, 10);
-  ledcAttachPin(PIN_BUZZER, BUZZER_CHN);
-  ledcWriteTone(BUZZER_CHN, 0);
+  ledcAttachChannel(PIN_BUZZER, BUZZER_FREQUENCY, 10, BUZZER_CHN);
+  ledcWriteTone(PIN_BUZZER, 0);
   delay(10);
 }
 
@@ -153,19 +152,19 @@ void Buzzer_Variable(bool enable, int frequency)
   if (enable == 1)
   {
     frequency = constrain(frequency, 0, 10000);
-    ledcWriteTone(BUZZER_CHN, frequency);
+    ledcWriteTone(PIN_BUZZER, frequency);
   }
   else
-    ledcWriteTone(BUZZER_CHN, 0);
+    ledcWriteTone(PIN_BUZZER, 0);
 }
 
 //Buzzer alarm function
 void Buzzer_Alarm(bool enable)
 {
   if (enable == 0)
-    ledcWriteTone(BUZZER_CHN, 0);
+    ledcWriteTone(PIN_BUZZER, 0);
   else
-    ledcWriteTone(BUZZER_CHN, BUZZER_FREQUENCY);
+    ledcWriteTone(PIN_BUZZER, BUZZER_FREQUENCY);
 }
 
 //Buzzer Alert function
@@ -177,14 +176,14 @@ void Buzzer_Alert(int beat, int rebeat)
   {
     for (int i = 0; i < beat; i++)
     {
-      ledcWriteTone(BUZZER_CHN, BUZZER_FREQUENCY);
+      ledcWriteTone(PIN_BUZZER, BUZZER_FREQUENCY);
       delay(100);
-      ledcWriteTone(BUZZER_CHN, 0);
+      ledcWriteTone(PIN_BUZZER, 0);
       delay(100);
     }
     delay(500);
   }
-  ledcWriteTone(BUZZER_CHN, 0);
+  ledcWriteTone(PIN_BUZZER, 0);
 }
 
 ////////////////////Battery drive area/////////////////////////////////////
@@ -264,7 +263,8 @@ PCF8574 TRACK_SENSOR(PCF8574_ADDRESS);
 //Trace module initialization
 void Track_Setup(void)
 {
-  TRACK_SENSOR.begin(PCF8574_SDA, PCF8574_SCL);
+  Wire.begin(PCF8574_SDA, PCF8574_SCL);
+  TRACK_SENSOR.begin();
 }
 
 //Tracking module reading

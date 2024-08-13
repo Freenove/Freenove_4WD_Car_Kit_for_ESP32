@@ -2,9 +2,8 @@
   Filename    : Camera Tcp Serrver
   Product     : Freenove 4WD Car for ESP32
   Auther      : www.freenove.com
-  Modification: 2021/12/02
+  Modification: 2024/08/12
 **********************************************************************/
-
 #include "esp_camera.h"
 #include <WiFi.h>
 #include <WiFiClient.h>
@@ -13,10 +12,10 @@
 #define CAMERA_MODEL_WROVER_KIT
 #include "camera_pins.h"
 
-const char* ssid_Router     =   "********";
-const char* password_Router =   "********";
-const char *ssid_AP         =   "Sunshine";
-const char *password_AP     =   "Sunshine";
+const char* ssid_Router =     "********";      //Modify according to your router name
+const char* password_Router = "********";      //Modify according to your router password
+const char* ssid_AP =         "Sunshine";      //ESP32 turns on an AP and calls it Sunshine
+const char* password_AP =     "Sunshine";      //Set your AP password for ESP32 to Sunshine
 
 WiFiServer server_Cmd(4000);
 WiFiServer server_Camera(7000);
@@ -29,23 +28,28 @@ void setup() {
   cameraSetup();
 
   WiFi.softAP(ssid_AP, password_AP);
-  IPAddress myIP = WiFi.softAPIP();
-  Serial.print("AP IP address: ");
-  Serial.println(myIP);
   server_Camera.begin(7000);
   server_Cmd.begin(4000);
+  server_Camera.setNoDelay(true);  //Set no delay in sending and receiving data
+  server_Cmd.setNoDelay(true);     //Set no delay in sending and receiving data
   /////////////////////////////////////////////////////
-  WiFi.disconnect(true);
   WiFi.begin(ssid_Router, password_Router);
   Serial.print("Connecting ");
   Serial.print(ssid_Router);
   int timeout = 0;
-  while (WiFi.isConnected() != true) {
+  while (WiFi.status() != WL_CONNECTED) {  //If the connection fails, wait half a second for another connection request
     delay(500);
     Serial.print(".");
-    //WiFi.begin(ssid_Router, password_Router);
     timeout++;
-    if (timeout >= 40)
+    if (timeout == 20)
+      break;
+  }
+  timeout = 0;
+  while (WiFi.STA.hasIP() != true) {
+    Serial.print(".");
+    delay(500);
+    timeout++;
+    if (timeout == 20)
       break;
   }
   Serial.println("");
@@ -58,16 +62,16 @@ void setup() {
   Serial.println("' to connect in Freenove app.");
 
   disableCore0WDT();
-  xTaskCreateUniversal(loopTask_Cmd, "loopTask_Cmd", 8192, NULL, 1, &loopTaskHandle, 0);		//loopTask_Cmd uses core 0.
+  xTaskCreateUniversal(loopTask_Cmd, "loopTask_Cmd", 8192, NULL, 1, &loopTaskHandle, 0);  //loopTask_Cmd uses core 0.
 }
 //task loop uses core 1.
 void loop() {
-  WiFiClient client = server_Camera.available();           // listen for incoming clients
-  if (client) {                                            // if you get a client,
-    Serial.println("Camera Server connected to a client.");// print a message out the serial port
-    String currentLine = "";                               // make a String to hold incoming data from the client
-    while (client.connected()) {                           // loop while the client's connected
-      camera_fb_t * fb = NULL;
+  WiFiClient client = server_Camera.accept();             // listen for incoming clients
+  if (client) {                                              // if you get a client,
+    Serial.println("Camera Server connected to a client.");  // print a message out the serial port
+    String currentLine = "";                                 // make a String to hold incoming data from the client
+    while (client.connected()) {                             // loop while the client's connected
+      camera_fb_t* fb = NULL;
       while (client.connected()) {
         fb = esp_camera_fb_get();
         if (fb != NULL) {
@@ -79,8 +83,7 @@ void loop() {
           client.write(slen, 4);
           client.write(fb->buf, fb->len);
           esp_camera_fb_return(fb);
-        }
-        else {
+        } else {
           Serial.println("Camera Error");
         }
       }
@@ -91,20 +94,20 @@ void loop() {
   }
 }
 
-void loopTask_Cmd(void *pvParameters) {
+void loopTask_Cmd(void* pvParameters) {
   Serial.println("Task Cmd_Server is starting ... ");
   while (1) {
-    WiFiClient client = server_Cmd.available();//listen for incoming clients
-    if (client)                                //if you get a client,
+    WiFiClient client = server_Cmd.accept();  //listen for incoming clients
+    if (client)                                  //if you get a client,
     {
       Serial.println("Command Server connected to a client.");
-      while (client.connected()) {//loop while the client's connected
-        if (client.available()) { //if there's bytes to read from the client,
+      while (client.connected()) {  //loop while the client's connected
+        if (client.available()) {   //if there's bytes to read from the client,
           String dataBuffer = client.readStringUntil('\n') + String("\n");
-          Serial.print(dataBuffer);//print it out the serial monitor
+          Serial.print(dataBuffer);  //print it out the serial monitor
         }
       }
-      client.stop();// close the connection:
+      client.stop();  // close the connection:
       Serial.println("Command Client Disconnected.");
     }
   }
@@ -126,15 +129,15 @@ void cameraSetup() {
   config.pin_pclk = PCLK_GPIO_NUM;
   config.pin_vsync = VSYNC_GPIO_NUM;
   config.pin_href = HREF_GPIO_NUM;
-  config.pin_sscb_sda = SIOD_GPIO_NUM;
-  config.pin_sscb_scl = SIOC_GPIO_NUM;
+  config.pin_sccb_sda = SIOD_GPIO_NUM;
+  config.pin_sccb_scl = SIOC_GPIO_NUM;
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
 
   //  config.frame_size = FRAMESIZE_VGA;     //640*480
-  config.frame_size = FRAMESIZE_CIF;     //400*296
+  config.frame_size = FRAMESIZE_CIF;  //400*296
   //  config.frame_size = FRAMESIZE_QVGA;    //320*240
   //  config.frame_size = FRAMESIZE_HQVGA;   //240*176
   //  config.frame_size = FRAMESIZE_QCIF;    //176*144

@@ -7,10 +7,11 @@
 #include <WiFiAP.h>
 
 ///////////////////WiFi drive area////////////////////////////////////////
-char* ssid_Router     =   "********";    //Modify according to your router name
-char* password_Router =   "********";    //Modify according to your router password
-char* ssid_AP         =   "Sunshine";    //ESP32 turns on an AP and calls it Sunshine
-char* password_AP     =   "Sunshine";    //Set your AP password for ESP32 to Sunshine
+char* ssid_Router     =   "********";   //Modify according to your router name
+char* password_Router =   "********";   //Modify according to your router password
+char* ssid_AP         =   "Sunshine";   //ESP32 turns on an AP and calls it Sunshine
+char* password_AP     =   "Sunshine";   //Set your AP password for ESP32 to Sunshine
+
 bool WiFi_MODE = 1;
 
 IPAddress local_IP(192, 168, 4, 1);
@@ -26,11 +27,14 @@ void WiFi_Setup(bool WiFi_Mode)
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid_Router, password_Router);
     WiFi.setSleep(false);
-    WiFi.setAutoConnect(true);
     WiFi.setAutoReconnect(true);
 
     Serial.print("\nWaiting for WiFi... ");
     while (WiFi.isConnected() != true) {
+      Serial.print(".");
+      delay(500);
+    }
+    while (WiFi.STA.hasIP() != true) {
       Serial.print(".");
       delay(500);
     }
@@ -130,8 +134,8 @@ bool cameraSetup(void)
   config.pin_pclk = PCLK_GPIO_NUM;
   config.pin_vsync = VSYNC_GPIO_NUM;
   config.pin_href = HREF_GPIO_NUM;
-  config.pin_sscb_sda = SIOD_GPIO_NUM;
-  config.pin_sscb_scl = SIOC_GPIO_NUM;
+  config.pin_sccb_sda = SIOD_GPIO_NUM;
+  config.pin_sccb_scl = SIOC_GPIO_NUM;
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;

@@ -1,3 +1,4 @@
+#include "esp32-hal-ledc.h"
 #include <Arduino.h>
 #include "Freenove_4WD_Car_For_ESP32.h"
 
@@ -168,9 +169,8 @@ void PCA9685_Close_Com_Address(void)
 void Buzzer_Setup(void)
 {
   pinMode(PIN_BUZZER, OUTPUT);
-  ledcSetup(BUZZER_CHN, BUZZER_FREQUENCY, 10);
-  ledcAttachPin(PIN_BUZZER, BUZZER_CHN);
-  ledcWriteTone(BUZZER_CHN, 0);
+  ledcAttachChannel(PIN_BUZZER, BUZZER_FREQUENCY, 10, BUZZER_CHN);
+  ledcWriteTone(PIN_BUZZER, 0);
   delay(10);
 }
 
@@ -183,14 +183,14 @@ void Buzzer_Alert(int beat, int rebeat)
   {
     for (int i = 0; i < beat; i++)
     {
-      ledcWriteTone(BUZZER_CHN, BUZZER_FREQUENCY);
+      ledcWriteTone(PIN_BUZZER, BUZZER_FREQUENCY);
       delay(100);
-      ledcWriteTone(BUZZER_CHN, 0);
+      ledcWriteTone(PIN_BUZZER, 0);
       delay(100);
     }
     delay(500);
   }
-  ledcWriteTone(BUZZER_CHN, 0);
+  ledcWriteTone(PIN_BUZZER, 0);
 }
 
 ////////////////////Battery drive area/////////////////////////////////////

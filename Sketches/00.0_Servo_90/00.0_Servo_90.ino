@@ -2,7 +2,7 @@
   Product     : Freenove 4WD Car for ESP32
   Description : use servo.
   Auther      : www.freenove.com
-  Modification: 2020/12/18
+  Modification: 2024/08/12
 **********************************************************************/
 #include "Freenove_4WD_Car_For_ESP32.h"
 
@@ -17,3 +17,14 @@ void loop()
   Servo_2_Angle(90);//Set the Angle value of servo 2 to 90°
   delay(1000);
 }
+
+
+
+
+
+
+
+
+
+
+

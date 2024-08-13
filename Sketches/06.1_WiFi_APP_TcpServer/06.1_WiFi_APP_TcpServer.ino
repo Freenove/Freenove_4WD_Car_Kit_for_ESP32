@@ -2,7 +2,7 @@
   Filename    : Camera Tcp Serrver
   Product     : Freenove 4WD Car for ESP32
   Auther      : www.freenove.com
-  Modification: 2021/12/02
+  Modification: 2024/08/12
 **********************************************************************/
 
 #include <WiFi.h>
@@ -25,16 +25,22 @@ void setup() {
   server_Camera.setNoDelay(true);   //Set no delay in sending and receiving data
   server_Cmd.setNoDelay(true);      //Set no delay in sending and receiving data
   //////////////////////////////////////////////////////////
-  WiFi.disconnect(true);
   WiFi.begin(ssid_Router, password_Router);//Make a connector request to the router
   Serial.print("Connecting ");
   Serial.print(ssid_Router);
   int timeout=0;
-  while (WiFi.isConnected() != true) { //If the connection fails, wait half a second for another connection request
+  while (WiFi.status() != WL_CONNECTED) { //If the connection fails, wait half a second for another connection request
     delay(500);
     Serial.print(".");
     timeout++;
-    //WiFi.begin(ssid_Router, password_Router);
+    if(timeout==20)
+      break;
+  }
+  timeout=0;
+  while (WiFi.STA.hasIP() != true) {
+    Serial.print(".");
+    delay(500);
+    timeout++;
     if(timeout==20)
       break;
   }
@@ -47,7 +53,7 @@ void setup() {
 }
 
 void loop() {
-  WiFiClient client = server_Cmd.available();//listen for incoming clients
+  WiFiClient client = server_Cmd.accept();   //listen for incoming clients
   if (client)                                //if you get a client,
   {
     Serial.println("Command Server connected to a client.");

@@ -2,7 +2,7 @@
   Filename    : Camera Car
   Product     : Freenove 4WD Car for ESP32
   Auther      : www.freenove.com
-  Modification: 2021/03/05
+  Modification: 2024/08/12
 **********************************************************************/
 
 #include <Arduino.h>
@@ -46,13 +46,12 @@ void setup() {
   Light_Setup();            //Light initialization
   Track_Setup();            //Track initialization
 
-  disableCore0WDT();        //Turn off the watchdog function in kernel 0
   xTaskCreateUniversal(loopTask_Camera, "loopTask_Camera", 8192, NULL, 0, NULL, 0);
   xTaskCreateUniversal(loopTask_WTD, "loopTask_WTD", 8192, NULL, 0, NULL, 0);
 }
 
 void loop() {
-  WiFiClient client = server_Cmd.available();                 //listen for incoming clients
+  WiFiClient client = server_Cmd.accept();                 //listen for incoming clients
   if (client) {                                               //if you get a client
     Serial.println("Cmd_Server connected to a client.");
     while (client.connected()) {                              //loop while the client's connected
@@ -126,7 +125,7 @@ void loop() {
 
 void loopTask_Camera(void *pvParameters) {
   while (1) {
-    WiFiClient client = server_Camera.available();//listen for incoming clients
+    WiFiClient client = server_Camera.accept();//listen for incoming clients
     if (client) {//if you get a client
       Serial.println("Camera_Server connected to a client.");
       if (client.connected()) {
