@@ -40,7 +40,7 @@ void loop()
 {
   ir_recv.task();                  //Get IR receice data.
   if(ir_recv.nec_available()){     //The data of the NEC protocol is checked
-  unsigned long value = ir_recv.data();
+    unsigned long value = ir_recv.data();
     handleControl(value); // Handle the commands from remote control
     Serial.print(value,HEX);
     Serial.println();
