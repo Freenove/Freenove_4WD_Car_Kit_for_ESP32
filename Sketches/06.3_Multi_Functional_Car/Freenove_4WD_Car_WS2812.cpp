@@ -172,6 +172,7 @@ void WS2812_SetMode(int mode)
 //WS2812 non-blocking display function
 void WS2812_Show(int mode)
 {
+  ws2812_strip.setLedCount(12);
   switch (mode)
   {
     case 0://Close the WS2812
