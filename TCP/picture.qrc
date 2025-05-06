@@ -1,5 +1,0 @@
-<RCC>
-  <qresource prefix="newPrefix">
-    <file>image/ESP32_4WD_Car.jpg</file>
-  </qresource>
-</RCC>
