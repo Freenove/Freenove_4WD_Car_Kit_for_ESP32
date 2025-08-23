@@ -44,13 +44,17 @@ As can be seen from the above figure, if we want to control the motor M1, we nee
 
 Similarly, to control the motor M2, we need to set the 8th and 9th channels of the PCA9685, to control the motor M3, we need to set the 12th and 13th channels of the PCA9685, and to control the motor M4, we need to set the 10th and 11th channels of the PCA9685.
 
-+--------+--------+----------------------------------+
-| Mx_IN1 | Mx_IN2 | Rotating direction of the wheels |
-+--------+--------+----------------------------------+
-| 1      | 0      | Forward                          |
-+--------+--------+----------------------------------+
-| 0      | 1      | backward                         |
-+--------+--------+----------------------------------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +--------+--------+----------------------------------+
+    | Mx_IN1 | Mx_IN2 | Rotating direction of the wheels |
+    +========+========+==================================+
+    | 1      | 0      | Forward                          |
+    +--------+--------+----------------------------------+
+    | 0      | 1      | backward                         |
+    +--------+--------+----------------------------------+
 
 Sketch
 =================================
@@ -76,7 +80,7 @@ Code
 After downloading the code, please put the car to a relatively open area. Turn on the power switch and you can see the car go forward, backward, turn left and turn right repeatedly.
 
 Code Explanation
-===================================
+-----------------------------------
 
 If you are not familiar with Arduino IDE, you can visit https://www.arduino.cc/reference/en/ to learn more. 
 
@@ -124,19 +128,23 @@ Servo is a compact package which consists of a DC motor, a set of reduction gear
 
 We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the Servo. The lasting time of 0.5ms-2.5ms of PWM single cycle high level corresponds to the servo angle 0 degrees - 180 degree linearly. Part of the corresponding values are as follows:
 
-+-----------------+-------------+
-| High level time | Servo angle |
-+=================+=============+
-| 0.5ms           | 0 degree    |
-+-----------------+-------------+
-| 1ms             | 45 degree   |
-+-----------------+-------------+
-| 1.5ms           | 0 degree    |
-+-----------------+-------------+
-| 2ms             | 45 degree   |
-+-----------------+-------------+
-| 2.5ms           | 180 degree  |
-+-----------------+-------------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +-----------------+-------------+
+    | High level time | Servo angle |
+    +=================+=============+
+    | 0.5ms           | 0 degree    |
+    +-----------------+-------------+
+    | 1ms             | 45 degree   |
+    +-----------------+-------------+
+    | 1.5ms           | 0 degree    |
+    +-----------------+-------------+
+    | 2ms             | 45 degree   |
+    +-----------------+-------------+
+    | 2.5ms           | 180 degree  |
+    +-----------------+-------------+
 
 When you change the servo signal value, the servo will rotate to the designated angle.
 
@@ -213,7 +221,7 @@ Buzzer is a sounding component, which is widely used in electronic devices such 
 
 Active buzzer is easy to use. Generally, it can only make a specific frequency of sound. Passive buzzer requires an external circuit to make a sound, but it can be controlled to make a sound with different frequency. The resonant frequency of the passive buzzer is 2kHz, which means the passive buzzer is loudest when its resonant frequency is 2kHz.
 
-:red:`How to identify active and passive buzzer`
+:combo:`red font-bolder:How to identify active and passive buzzer`
 
 1.	Usually, there is a label on the surface of active buzzer covering the vocal hole, but this is not an absolute judgment method.
 
@@ -243,7 +251,7 @@ Open “01.3_Buzzer” folder in the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches
     :align: center
 
 Code
-==============================
+-----------------------------------
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/01.3_Buzzer/01.3_Buzzer.ino
     :linenos: 
@@ -256,7 +264,7 @@ After the program is downloaded to ESP32, the buzzer emits 4 short beeps, repeat
     :align: center
 
 Code Explanation
-==============================
+-----------------------------------
 
 Configure the PWM of ESP32 to associate it with GPIO2 pin to control the buzzer to make sounds.
 
@@ -308,7 +316,7 @@ Serial communication generally refers to the Universal Asynchronous Receiver/Tra
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_16.png
     :align: center
 
-For serial communication, the baud rate in both sides must be the same. The baud rates commonly used are 9600 and 115200.
+For serial communication, **the baud rate in both sides must be the same**. The baud rates commonly used are 9600 and 115200.
 
 Computer identifies serial devices connected to your computer as COMx. We can use the Serial Monitor window of Arduino Software to communicate with Freenove control board.
 
@@ -331,7 +339,7 @@ In this section, we will use GPIO32 of ESP32 to read the voltage value of the ba
     :align: center
 
 Code
-=========================
+-----------------------------------
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/01.4_Battery_level/01.4_Battery_level.ino
     :linenos: 
@@ -339,7 +347,7 @@ Code
     :dedent:
 
 Code Explanation
-=========================
+-----------------------------------
 
 Activate the serial port and set the baud rate to 115200.
 
@@ -405,11 +413,15 @@ For this tutorial, the LED matrix module is individual and it is driven by IIC c
 
 The LED matrix is common anode. As we can see from the schematic above, the anode of LED matrix is connected to ROWx of HT16K33 chip, and the cathode is connected to COMx. The address of HT16K33 chip is (0x70+[A2:A0]), and the default address of LED matrix is 0x71. If you want to change the address, you can use a knife to cut the connecting line in the middle of A0, or connect A1/A2.
 
-+---------------------+--------------------+
-| Front of LED Matrix | Back of LED Matrix |
-|                     |                    |
-| |Chapter02_24|      | |Chapter02_25|     |
-+---------------------+--------------------+
+.. table::
+    :align: center
+    :class: table-line
+    
+    +---------------------+--------------------+
+    | Front of LED Matrix | Back of LED Matrix |
+    |                     |                    |
+    | |Chapter02_24|      | |Chapter02_25|     |
+    +---------------------+--------------------+
 
 .. |Chapter02_24| image:: ../_static/imgs/2_Module_test_/Chapter02_24.png
 .. |Chapter02_25| image:: ../_static/imgs/2_Module_test_/Chapter02_25.png
@@ -421,45 +433,53 @@ We divide the LED matrix into two sides and display “+” on the left and “o
 
 Below, the table on the left corresponds to the "+" above, and the table on the right corresponds to the "o" above.
 
-+-----+-----------+-------------+
-| Row |  Binary   | Hexadecimal |
-+=====+===========+=============+
-| 1   | 0000 0000 | 0x00        |
-+-----+-----------+-------------+
-| 2   | 0001 1000 | 0x18        |
-+-----+-----------+-------------+
-| 3   | 0001 1000 | 0x18        |
-+-----+-----------+-------------+
-| 4   | 0111 1110 | 0x7e        |
-+-----+-----------+-------------+
-| 5   | 0111 1110 | 0x7e        |
-+-----+-----------+-------------+
-| 6   | 0001 1000 | 0x18        |
-+-----+-----------+-------------+
-| 7   | 0001 1000 | 0x18        |
-+-----+-----------+-------------+
-| 8   | 0000 0000 | 0x00        |
-+-----+-----------+-------------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +-----+-----------+-------------+
+    | Row |  Binary   | Hexadecimal |
+    +=====+===========+=============+
+    | 1   | 0000 0000 | 0x00        |
+    +-----+-----------+-------------+
+    | 2   | 0001 1000 | 0x18        |
+    +-----+-----------+-------------+
+    | 3   | 0001 1000 | 0x18        |
+    +-----+-----------+-------------+
+    | 4   | 0111 1110 | 0x7e        |
+    +-----+-----------+-------------+
+    | 5   | 0111 1110 | 0x7e        |
+    +-----+-----------+-------------+
+    | 6   | 0001 1000 | 0x18        |
+    +-----+-----------+-------------+
+    | 7   | 0001 1000 | 0x18        |
+    +-----+-----------+-------------+
+    | 8   | 0000 0000 | 0x00        |
+    +-----+-----------+-------------+
 
-+-----+-----------+-------------+
-| Row |  Binary   | Hexadecimal |
-+=====+===========+=============+
-| 1   | 0000 0000 | 0x00        |
-+-----+-----------+-------------+
-| 2   | 0001 1000 | 0x18        |
-+-----+-----------+-------------+
-| 3   | 0010 0100 | 0x24        |
-+-----+-----------+-------------+
-| 4   | 0100 0010 | 0x42        |
-+-----+-----------+-------------+
-| 5   | 0100 0010 | 0x42        |
-+-----+-----------+-------------+
-| 6   | 0010 0100 | 0x24        |
-+-----+-----------+-------------+
-| 7   | 0001 1000 | 0x18        |
-+-----+-----------+-------------+
-| 8   | 0000 0000 | 0x00        |
-+-----+-----------+-------------+
+.. table::
+    :align: center
+    :class: zebra zebra-theme-blue
+    
+    +-----+-----------+-------------+
+    | Row |  Binary   | Hexadecimal |
+    +=====+===========+=============+
+    | 1   | 0000 0000 | 0x00        |
+    +-----+-----------+-------------+
+    | 2   | 0001 1000 | 0x18        |
+    +-----+-----------+-------------+
+    | 3   | 0010 0100 | 0x24        |
+    +-----+-----------+-------------+
+    | 4   | 0100 0010 | 0x42        |
+    +-----+-----------+-------------+
+    | 5   | 0100 0010 | 0x42        |
+    +-----+-----------+-------------+
+    | 6   | 0010 0100 | 0x24        |
+    +-----+-----------+-------------+
+    | 7   | 0001 1000 | 0x18        |
+    +-----+-----------+-------------+
+    | 8   | 0000 0000 | 0x00        |
+    +-----+-----------+-------------+
 
 Sketch
 ==========================
@@ -546,7 +566,7 @@ The data on the left of the LED matrix are stored together and end with "----x",
 Open the folder “01.5_Matrix” in the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “01.5_Matrix.ino”
 
 Code
-=====================================
+-----------------------------------
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/01.5_Matrix/01.5_Matrix.ino
     :linenos: 
@@ -561,7 +581,7 @@ You can see the LED matrix keep blinking like eyes.
     :align: center
 
 Code Explanation
-===================================
+-----------------------------------
 
 Add the header file of LED matrix. Each time before controlling LED matrix, please add its header file first.
 
@@ -596,7 +616,7 @@ Define count to calculate the number of one-dimensional arrays contained in the 
 
     int count = sizeof(x_array) / sizeof(x_array[0]);
     for (int i = 0; i < count; i++)
-    |
+    {
         matrix.showStaticArray(x_array[i], y_array[i]);
         delay(500);
     }
@@ -635,7 +655,7 @@ Open Arduino IDE, select Sketch on Menu bar, move the mouse to Include library a
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_44.png
     :align: center
 
-Enter Freenove_WS2812_Lib_for_ESP32 in the input field of the pop-up window, find it and then click Install.
+Enter **Freenove_WS2812_Lib_for_ESP32** in the input field of the pop-up window, find it and then click Install.
 
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_45.png
     :align: center
@@ -648,7 +668,7 @@ Next we will download the code to ESP32 to test the LED. Open the folder “01.6
     :align: center
 
 Code
-=============================
+-----------------------------------
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/01.6_WS2812/01.6_WS2812.ino
     :linenos: 
@@ -657,7 +677,8 @@ Code
 
 Download the code to the ESP32, turn ON the power switch and the WS2812 on the car will emit lights like rainbow.
 
-Code Explanation:
+Code Explanation
+----------------------------
 
 Add the header file of WS2812. Each time before controlling WS2812, please add its header file.
 

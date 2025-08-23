@@ -12,57 +12,62 @@ In the whole tutorial, only Chapter 3 uses the ultrasonic pan-tilt. Please repla
 Replace Pan-tilt
 ====================================
 
-+----------------------------------------------------------------------+
-| Step 1                                                               |
-|                                                                      |
-| |Chapter03_00|                                                       |
-|                                                                      |
-| Remove M2*4 screws to uninstall the pan-tilt.                        |
-+----------------------------------------------------------------------+
-| Step 2                                                               |
-|                                                                      |
-| |Chapter03_01|                                                       |
-|                                                                      |
-| Remove the M2*16 screws and M2 nuts on both sides of the Pan-tilt.   |
-+----------------------------------------------------------------------+
-| Step 3                                                               |
-|                                                                      |
-| |Chapter03_02|                                                       |
-|                                                                      |
-| Remove the 4 M1.4*6 screws on the LED matrix module.                 |
-+----------------------------------------------------------------------+
-| Step 4                                                               |
-|                                                                      |
-| |Chapter03_03|                                                       |
-|                                                                      |
-| Use 4 M1.4*6 screws to fix the ultrasonic module to the Pan-tilt.    |
-+----------------------------------------------------------------------+
-| Step 5                                                               |
-|                                                                      |
-| |Chapter03_04|                                                       |
-|                                                                      |
-| Install M2*16 screws and M2 nuts on both sides of the Pan-tilt.      |
-+----------------------------------------------------------------------+
-| Step 6                                                               |
-|                                                                      |
-| |Chapter03_05|                                                       |
-|                                                                      |
-| Use 1 M2*16 and 1 M2 nut to fix the three acrylic boards together.   |
-+----------------------------------------------------------------------+
-| Step 7                                                               |
-|                                                                      |
-| |Chapter03_06|                                                       |
-|                                                                      |
-| Use M2*4 screws to fix the ultrasonic pan-tilt to the servo motor 2. |
-|                                                                      |
-| Please note that you need to adjust the servo motor to a position    |
-|                                                                      |
-| of 90 degrees before fixing the pan-tilt to it.                      |
-+----------------------------------------------------------------------+
-| After finished                                                       |
-|                                                                      |
-| |Chapter03_07|                                                       |
-+----------------------------------------------------------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +----------------------------------------------------------------------+
+    | Step 1                                                               |
+    |                                                                      |
+    | |Chapter03_00|                                                       |
+    |                                                                      |
+    | Remove M2*4 screws to uninstall the pan-tilt.                        |
+    +----------------------------------------------------------------------+
+    | Step 2                                                               |
+    |                                                                      |
+    | |Chapter03_01|                                                       |
+    |                                                                      |
+    | Remove the M2*16 screws and M2 nuts on both sides of the Pan-tilt.   |
+    +----------------------------------------------------------------------+
+    | Step 3                                                               |
+    |                                                                      |
+    | |Chapter03_02|                                                       |
+    |                                                                      |
+    | Remove the 4 M1.4*6 screws on the LED matrix module.                 |
+    +----------------------------------------------------------------------+
+    | Step 4                                                               |
+    |                                                                      |
+    | |Chapter03_03|                                                       |
+    |                                                                      |
+    | Use 4 M1.4*6 screws to fix the ultrasonic module to the Pan-tilt.    |
+    +----------------------------------------------------------------------+
+    | Step 5                                                               |
+    |                                                                      |
+    | |Chapter03_04|                                                       |
+    |                                                                      |
+    | Install M2*16 screws and M2 nuts on both sides of the Pan-tilt.      |
+    +----------------------------------------------------------------------+
+    | Step 6                                                               |
+    |                                                                      |
+    | |Chapter03_05|                                                       |
+    |                                                                      |
+    | Use 1 M2*16 and 1 M2 nut to fix the three acrylic boards together.   |
+    +----------------------------------------------------------------------+
+    | Step 7                                                               |
+    |                                                                      |
+    | |Chapter03_06|                                                       |
+    |                                                                      |
+    | Use M2*4 screws to fix the ultrasonic pan-tilt to the servo motor 2. |
+    |                                                                      |
+    | Please note that you need to adjust the servo motor to a position    |
+    |                                                                      |
+    | of 90 degrees before fixing the pan-tilt to it.                      |
+    +----------------------------------------------------------------------+
+    | After finished                                                       |
+    |                                                                      |
+    | |Chapter03_07|                                                       |
+    +----------------------------------------------------------------------+
 
 .. |Chapter03_00| image:: ../_static/imgs/3_Ultrasonic_Obstacle_Avoidance_Car/Chapter03_00.png
 .. |Chapter03_01| image:: ../_static/imgs/3_Ultrasonic_Obstacle_Avoidance_Car/Chapter03_01.png
@@ -89,26 +94,34 @@ The ultrasonic ranging module uses the principle that ultrasonic waves will be s
 
 The HC-SR04 ultrasonic ranging module integrates both an ultrasonic transmitter and a receiver. The transmitter is used to convert electrical signals (electrical energy) into high frequency (beyond human hearing) sound waves (mechanical energy) and the function of the receiver is opposite of this. The picture and the diagram of the HC SR04 ultrasonic ranging module are shown below:
 
-+----------------+----------------+
-| |Chapter03_10| | |Chapter03_11| |
-+----------------+----------------+
+.. table::
+    :align: center
+    :class: table-line
+    
+    +----------------+----------------+
+    | |Chapter03_10| | |Chapter03_11| |
+    +----------------+----------------+
 
 .. |Chapter03_10| image:: ../_static/imgs/3_Ultrasonic_Obstacle_Avoidance_Car/Chapter03_10.png
 .. |Chapter03_11| image:: ../_static/imgs/3_Ultrasonic_Obstacle_Avoidance_Car/Chapter03_11.png
 
 **Pin description:**
 
-+------+------------------+
-| Pin  | Description      |
-+------+------------------+
-| VCC  | Power supply pin |
-+------+------------------+
-| Trig | Trigger pin      |
-+------+------------------+
-| Echo | Echo pin         |
-+------+------------------+
-| GND  | GND              |
-+------+------------------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +------+------------------+
+    | Pin  | Description      |
+    +======+==================+
+    | VCC  | Power supply pin |
+    +------+------------------+
+    | Trig | Trigger pin      |
+    +------+------------------+
+    | Echo | Echo pin         |
+    +------+------------------+
+    | GND  | GND              |
+    +------+------------------+
 
 **Technical specs:**
 
@@ -138,7 +151,7 @@ Sketch
 
 When the power of the car is turned ON, every module will be initialized and the servo motor will rotate to 90°. The ultrasonic data will be obtained and printed through serial port as the servo motor rotates.
 
-Open the folder “02.1_Ultrasonic_Ranging” in “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “02.1_Ultrasonic_Ranging.ino”
+Open the folder “02.1_Ultrasonic_Ranging” in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “02.1_Ultrasonic_Ranging.ino”
 
 Code
 -------------------------------
@@ -197,7 +210,7 @@ After starting the car, the ultrasound acquires data in various directions, make
 Sketch
 =================================
 
-Open the folder “02.2_Ultrasonic_Ranging_Car”in “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “02.2_Ultrasonic_Ranging_Car.ino”.
+Open the folder “02.2_Ultrasonic_Ranging_Car”in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “02.2_Ultrasonic_Ranging_Car.ino”.
 
 Code
 ----------------------------------

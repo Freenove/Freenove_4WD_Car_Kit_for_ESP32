@@ -11,33 +11,37 @@ There are three Reflective Optical Sensors on this car. When the infrared light 
 
 As we know, black objects absorb light better. So when black lines are drawn on the white plane, the sensor can detect the difference. The sensor can also be called Line Tracking Sensor.
 
-:red:`Warning:`
+:combo:`red font-bolder:Warning:`
 
-:red:`Reflective Optical Sensor (including Line Tracking Sensor) should be avoided using in environment with infrared interference, like sunlight. Sunlight contains a lot of invisible light such as infrared and ultraviolet. Under environment with intense sunlight, Reflective Optical Sensor cannot work normally.`
+:combo:`red font-bolder:Reflective Optical Sensor (including Line Tracking Sensor) should be avoided using in environment with infrared interference, like sunlight. Sunlight contains a lot of invisible light such as infrared and ultraviolet. Under environment with intense sunlight, Reflective Optical Sensor cannot work normally.`
 
 The following table shows the values of all cases when three Tracking Sensors detect objects of different colors.
 
 Among them, black objects or no objects were detected to represent 1, and white objects were detected to represent 0.
 
-+------+--------+-------+---------------+----------------+
-| Left | Middle | Right | Value(binary) | Value(decimal) |
-+======+========+=======+===============+================+
-| 0    | 0      | 0     | 000           | 0              |
-+------+--------+-------+---------------+----------------+
-| 0    | 0      | 1     | 001           | 1              |
-+------+--------+-------+---------------+----------------+
-| 0    | 1      | 0     | 010           | 2              |
-+------+--------+-------+---------------+----------------+
-| 0    | 1      | 1     | 011           | 3              |
-+------+--------+-------+---------------+----------------+
-| 1    | 0      | 0     | 100           | 4              |
-+------+--------+-------+---------------+----------------+
-| 1    | 0      | 1     | 101           | 5              |
-+------+--------+-------+---------------+----------------+
-| 1    | 1      | 0     | 110           | 6              |
-+------+--------+-------+---------------+----------------+
-| 1    | 1      | 1     | 111           | 7              |
-+------+--------+-------+---------------+----------------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +------+--------+-------+---------------+----------------+
+    | Left | Middle | Right | Value(binary) | Value(decimal) |
+    +======+========+=======+===============+================+
+    | 0    | 0      | 0     | 000           | 0              |
+    +------+--------+-------+---------------+----------------+
+    | 0    | 0      | 1     | 001           | 1              |
+    +------+--------+-------+---------------+----------------+
+    | 0    | 1      | 0     | 010           | 2              |
+    +------+--------+-------+---------------+----------------+
+    | 0    | 1      | 1     | 011           | 3              |
+    +------+--------+-------+---------------+----------------+
+    | 1    | 0      | 0     | 100           | 4              |
+    +------+--------+-------+---------------+----------------+
+    | 1    | 0      | 1     | 101           | 5              |
+    +------+--------+-------+---------------+----------------+
+    | 1    | 1      | 0     | 110           | 6              |
+    +------+--------+-------+---------------+----------------+
+    | 1    | 1      | 1     | 111           | 7              |
+    +------+--------+-------+---------------+----------------+
 
 Sketch
 ===================================
@@ -56,7 +60,7 @@ Input “PCF8574” in the searching field and find the library marked below, cl
 
 The line tracking module is connected to the PCF8574. The ESP32 obtains whether the three channels of the line tracking module are triggered by reading the IO value of the PCF8574, and prints it out through the serial port.
 
-Open the folder “04.1_Tracking_Sensor” in “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “04.1_Tracking_Sensor.ino”.
+Open the folder “04.1_Tracking_Sensor” in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “04.1_Tracking_Sensor.ino”.
 
 Code
 -------------------------------------
@@ -105,25 +109,29 @@ Click “Upload” to upload to code to ESP32 development board. After uploading
 
 The car will make different actions according to the value transmitted by the line-tracking sensor.
 
-+------+--------+-------+---------------+----------------+--------------+
-| Left | Middle | Right | Value(binary) | Value(decimal) |    Action    |
-+======+========+=======+===============+================+==============+
-| 0    | 0      | 0     | 000           | 0              | Stop         |
-+------+--------+-------+---------------+----------------+--------------+
-| 0    | 0      | 1     | 001           | 1              | Turn Left    |
-+------+--------+-------+---------------+----------------+--------------+
-| 0    | 1      | 0     | 010           | 2              | Move Forward |
-+------+--------+-------+---------------+----------------+--------------+
-| 0    | 1      | 1     | 011           | 3              | Turn Left    |
-+------+--------+-------+---------------+----------------+--------------+
-| 1    | 0      | 0     | 100           | 4              | Turn Right   |
-+------+--------+-------+---------------+----------------+--------------+
-| 1    | 0      | 1     | 101           | 5              | Move Forward |
-+------+--------+-------+---------------+----------------+--------------+
-| 1    | 1      | 0     | 110           | 6              | Turn Right   |
-+------+--------+-------+---------------+----------------+--------------+
-| 1    | 1      | 1     | 111           | 7              | Stop         |
-+------+--------+-------+---------------+----------------+--------------+
+.. table::
+    :align: center
+    :class: zebra zebra-theme-blue
+    
+    +------+--------+-------+---------------+----------------+--------------+
+    | Left | Middle | Right | Value(binary) | Value(decimal) |    Action    |
+    +======+========+=======+===============+================+==============+
+    | 0    | 0      | 0     | 000           | 0              | Stop         |
+    +------+--------+-------+---------------+----------------+--------------+
+    | 0    | 0      | 1     | 001           | 1              | Turn Left    |
+    +------+--------+-------+---------------+----------------+--------------+
+    | 0    | 1      | 0     | 010           | 2              | Move Forward |
+    +------+--------+-------+---------------+----------------+--------------+
+    | 0    | 1      | 1     | 011           | 3              | Turn Left    |
+    +------+--------+-------+---------------+----------------+--------------+
+    | 1    | 0      | 0     | 100           | 4              | Turn Right   |
+    +------+--------+-------+---------------+----------------+--------------+
+    | 1    | 0      | 1     | 101           | 5              | Move Forward |
+    +------+--------+-------+---------------+----------------+--------------+
+    | 1    | 1      | 0     | 110           | 6              | Turn Right   |
+    +------+--------+-------+---------------+----------------+--------------+
+    | 1    | 1      | 1     | 111           | 7              | Stop         |
+    +------+--------+-------+---------------+----------------+--------------+
 
 Turn on the power. Use a black tape to build a line and then put your car on it as below.
 

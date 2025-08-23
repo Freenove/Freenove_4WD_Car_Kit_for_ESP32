@@ -23,7 +23,7 @@ Check whether CH340 has been installed
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_01.png
     :align: center
 
-3.	Click “Device Manager”. If your computer has installed CH340, you can see“USB-SERIAL CH340 (COMx)”. And you can click here to move to the next step.
+3.	Click “Device Manager”. If your computer has installed CH340, you can see“USB-SERIAL CH340 (COMx)”. And you can click :ref:`here <Arduino>` to move to the next step.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_02.png
     :align: center
@@ -36,12 +36,12 @@ Installing CH340
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_03.png
     :align: center
 
-If you would not like to download the installation package, you can open **“Freenove_Ultimate_Starter_Kit_for_ESP32/CH340”**, we have prepared the installation package.
+If you would not like to download the installation package, you can open **“Freenove_4WD_Car_Kit_for_ESP32/CH340”**, we have prepared the installation package.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_04.png
     :align: center
 
-2.	Open the folder “Freenove_Ultimate_Starter_Kit_for_ESP32/CH340/Windows/”
+2.	Open the folder “Freenove_4WD_Car_Kit_for_ESP32/CH340/Windows/”
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_05.png
     :align: center
@@ -76,9 +76,9 @@ First, download CH340 driver, click http://www.wch-ic.com/search?q=CH340&t=downl
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_10.png
     :align: center
 
-If you would not like to download the installation package, you can open **“Freenove_Ultimate_Starter_Kit_for_ESP32/CH340”** , we have prepared the installation package.
+If you would not like to download the installation package, you can open **“Freenove_4WD_Car_Kit_for_ESP32/CH340”** , we have prepared the installation package.
 
-Second, open the folder **“Freenove_Ultimate_Starter_Kit_for_ESP32/CH340/MAC/”**
+Second, open the folder **“Freenove_4WD_Car_Kit_for_ESP32/CH340/MAC/”**
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_11.png
     :align: center
@@ -107,6 +107,8 @@ If you still haven't installed the CH340 by following the steps above, you can v
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_16.png
     :align: center
+
+.. _Arduino:
 
 Arduino Software
 ******************************************

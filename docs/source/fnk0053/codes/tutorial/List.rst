@@ -7,11 +7,15 @@ If you have any concerns, please feel free to contact us via support@freenove.co
 ESP32 Car Shield
 ***********************************
 
-+----------+----------+
-| Top      | Bottom   |
-|          |          |
-| |List00| | |List01| |
-+----------+----------+
+.. table::
+    :align: center
+    :class: table-line
+    
+    +----------+----------+
+    | Top      | Bottom   |
+    |          |          |
+    | |List00| | |List01| |
+    +----------+----------+
 
 .. |List00| image:: ../_static/imgs/List/List00.png
 .. |List01| image:: ../_static/imgs/List/List01.png
@@ -19,11 +23,15 @@ ESP32 Car Shield
 Machinery Parts
 ***********************************
 
-+----------+----------+----------+
-| |List02| | |List03| | |List04| |
-+----------+----------+----------+
-| |List05| | |List06| | |List07| |
-+----------+----------+----------+
+.. table::
+    :align: center
+    :class: table-line
+    
+    +----------+----------+----------+
+    | |List02| | |List03| | |List04| |
+    +----------+----------+----------+
+    | |List05| | |List06| | |List07| |
+    +----------+----------+----------+
 
 .. |List02| image:: ../_static/imgs/List/List02.png
 .. |List03| image:: ../_static/imgs/List/List03.png
@@ -35,15 +43,20 @@ Machinery Parts
 Transmission Parts
 ***********************************
 
-+-----------------------------+---------------------------+
-| Servo package x2            | Driven wheel x4           |
-|                             |                           |
-| |List08|                    | |List09|                  |
-+-----------------------------+---------------------------+
-| DC speed reduction motor x4 | Motor bracket package  x4 |
-|                             |                           |
-| |List10|                    | |List11|                  |
-+-----------------------------+---------------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +-----------------------------+---------------------------+
+    | Servo package x2            | Driven wheel x4           |
+    |                             |                           |
+    | |List08|                    | |List09|                  |
+    +-----------------------------+---------------------------+
+    | DC speed reduction motor x4 | Motor bracket package  x4 |
+    |                             |                           |
+    | |List10|                    | |List11|                  |
+    +-----------------------------+---------------------------+
 
 .. |List08| image:: ../_static/imgs/List/List08.png
 .. |List09| image:: ../_static/imgs/List/List09.png
@@ -55,15 +68,20 @@ Acrylic Parts
 
 Note that there are two kinds of acrylic in the car, and they are very similar to each other, except for a little difference in the head. But they are the same steps on installation.
 
-+--------------+
-| Acrylic List |
-|              |
-| |List12|     |
-+--------------+
-| Acrylic List |
-|              |
-| |List13|     |
-+--------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +--------------+
+    | Acrylic List |
+    |              |
+    | |List12|     |
+    +--------------+
+    | Acrylic List |
+    |              |
+    | |List13|     |
+    +--------------+
 
 .. |List12| image:: ../_static/imgs/List/List12.png
 .. |List13| image:: ../_static/imgs/List/List13.png
@@ -71,19 +89,24 @@ Note that there are two kinds of acrylic in the car, and they are very similar t
 Electronic Parts
 **************************************
 
-+-------------------------+----------------------+------------------------------+
-| Line tracking module x1 | Dot Matrix Module x1 | HC-SR04 Ultrasonic Module x1 |
-|                         |                      |                              |
-| |List14|                | |List15|             | |List16|                     |
-|                         |                      +------------------------------+
-|                         |                      | Camera connector x1          |
-|                         |                      |                              |
-|                         |                      | |List17|                     |
-+-------------------------+------------+---------+------------------------------+
-| ESP32 x1                             | Infrared emitter x1                    |
-|                                      |                                        |
-| |List18|                             | |List19|                               |
-+--------------------------------------+----------------------------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +-------------------------+----------------------+------------------------------+
+    | Line tracking module x1 | Dot Matrix Module x1 | HC-SR04 Ultrasonic Module x1 |
+    |                         |                      |                              |
+    | |List14|                | |List15|             | |List16|                     |
+    |                         |                      +------------------------------+
+    |                         |                      | Camera connector x1          |
+    |                         |                      |                              |
+    |                         |                      | |List17|                     |
+    +-------------------------+------------+---------+------------------------------+
+    | ESP32 x1                             | Infrared emitter x1                    |
+    |                                      |                                        |
+    | |List18|                             | |List19|                               |
+    +--------------------------------------+----------------------------------------+
 
 .. |List14| image:: ../_static/imgs/List/List14.png
 .. |List15| image:: ../_static/imgs/List/List15.png
@@ -99,19 +122,24 @@ Electronic Parts
 Wires
 *************************************
 
-+-----------------------+
-| Jumper Wire F/F(4) x1 |
-|                       |
-| |List20|              |
-+-----------------------+
-| FPC Wire x1           |
-|                       |
-| |List21|              |
-+-----------------------+
-| XH-2.54-5Pin cable x1 |
-|                       |
-| |List22|              |
-+-----------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +-----------------------+
+    | Jumper Wire F/F(4) x1 |
+    |                       |
+    | |List20|              |
+    +-----------------------+
+    | FPC Wire x1           |
+    |                       |
+    | |List21|              |
+    +-----------------------+
+    | XH-2.54-5Pin cable x1 |
+    |                       |
+    | |List22|              |
+    +-----------------------+
 
 .. |List20| image:: ../_static/imgs/List/List20.png
 .. |List21| image:: ../_static/imgs/List/List21.png
@@ -120,11 +148,16 @@ Wires
 Tools
 **************************************
 
-+----------------------------+---------------+------------------+
-| Cross screwdriver (3mm) x1 | Black tape x1 | Cable Tidy x15cm |
-|                            |               |                  |
-| |List23|                   | |List24|      | |List25|         |
-+----------------------------+---------------+------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +----------------------------+---------------+------------------+
+    | Cross screwdriver (3mm) x1 | Black tape x1 | Cable Tidy x15cm |
+    |                            |               |                  |
+    | |List23|                   | |List24|      | |List25|         |
+    +----------------------------+---------------+------------------+
  
 .. |List23| image:: ../_static/imgs/List/List23.png
 .. |List24| image:: ../_static/imgs/List/List24.png
@@ -133,12 +166,17 @@ Tools
 Required but NOT Contained Parts
 **********************************************
 
-+---------------------------------------------------------------------------------------------+
-| 2 x 3.7V 18650 lithium rechargeable batteries with continuous discharge current >3A.        |
-|                                                                                             |
-| It is easier to find proper battery on eBay than Amazon. Search “18650 high drain” on eBay. |
-|                                                                                             |
-| |List26|                                                                                    |
-+---------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :class: table-line text-center
+    :width: 60%
+    
+    +---------------------------------------------------------------------------------------------+
+    | 2 x 3.7V 18650 lithium rechargeable batteries with continuous discharge current >3A.        |
+    |                                                                                             |
+    | It is easier to find proper battery on eBay than Amazon. Search “18650 high drain” on eBay. |
+    |                                                                                             |
+    | |List26|                                                                                    |
+    +---------------------------------------------------------------------------------------------+
 
 .. |List26| image:: ../_static/imgs/List/List26.png

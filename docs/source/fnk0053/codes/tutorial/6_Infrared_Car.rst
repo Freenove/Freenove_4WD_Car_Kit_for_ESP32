@@ -37,7 +37,7 @@ Sketch
 
 We use the third party library **Freenove_IR_Lib_for_ESP32**. If you haven't installed it yet, please do so first. 
 
-The steps to add third-party Libraries are as follows: open arduino -> Sketch -> Include library -> Manage libraries. Enter "Freenove_IR_Lib_for_ESP32" in the search bar and select "Freenove_IR_Lib_for_ESP32" for installation.
+The steps to add third-party Libraries are as follows: open arduino -> Sketch -> Include library -> Manage libraries. Enter **"Freenove_IR_Lib_for_ESP32"** in the search bar and select **"Freenove_IR_Lib_for_ESP32"** for installation.
 
 Refer to the following operations:
 
@@ -108,7 +108,7 @@ On the basis of the previous section, we use the infrared remote control to cont
 Sketch
 =============================
 
-Open the folder “05.2_IR_Receiver_Car” in the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “05.2_IR_Receiver_Car.ino”.
+Open the folder “05.2_IR_Receiver_Car” in the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “05.2_IR_Receiver_Car.ino”.
 
 Code
 ----------------------------
@@ -172,7 +172,7 @@ On the basis of the last section, we integrate other functions of the car into t
 Sketch
 ====================================
 
-Open the folder “05.3_Multi_Functional_Car” in the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “05.3_Multi_Functional_Car.ino”.
+Open the folder “05.3_Multi_Functional_Car” in the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “05.3_Multi_Functional_Car.ino”.
 
 Code
 --------------------------------------

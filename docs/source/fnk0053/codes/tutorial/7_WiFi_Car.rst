@@ -348,7 +348,7 @@ Earlier we used the WiFi to transmit command. In this section, we use WiFi to tr
 Sketch
 =======================================
 
-Open the folder “06.2_WiFi_Cam_TcpServer” in the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “06.2_WiFi_Cam_TcpServer.ino”.
+Open the folder “06.2_WiFi_Cam_TcpServer” in the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “06.2_WiFi_Cam_TcpServer.ino”.
 
 Before uploading the code, please modify the name and password of Router. Other operation is the same as Section :ref:`7.1 <fnk0053/codes/tutorial/7_wifi_car:7.1 wifi sending and receiving data>`.
 
@@ -477,23 +477,27 @@ Call the esp_camera_fb_get() function to get the image data and store it in fb. 
 Reference
 ---------------------------
 
-+-------------------+-----------+------------------+-----------+
-| Image resolution  | Sharpness | Image resolution | Sharpness |
-+===================+===========+==================+===========+
-| FRAMESIZE_96x96   | 96x96     | FRAMESIZE_HVGA   | 480x320   |
-+-------------------+-----------+------------------+-----------+
-| FRAMESIZE_QQVGA   | 160x120   | FRAMESIZE_VGA    | 640x480   |
-+-------------------+-----------+------------------+-----------+
-| FRAMESIZE_QCIF    | 176x144   | FRAMESIZE_SVGA   | 800x600   |
-+-------------------+-----------+------------------+-----------+
-| FRAMESIZE_HQVGA   | 240x176   | FRAMESIZE_XGA    | 1024x768  |
-+-------------------+-----------+------------------+-----------+
-| FRAMESIZE_240x240 | 240x240   | FRAMESIZE_HD     | 1280x720  |
-+-------------------+-----------+------------------+-----------+
-| FRAMESIZE_QVGA    | 320x240   | FRAMESIZE_SXGA   | 1280x1024 |
-+-------------------+-----------+------------------+-----------+
-| FRAMESIZE_CIF     | 400x296   | FRAMESIZE_UXGA   | 1600x1200 |
-+-------------------+-----------+------------------+-----------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +-------------------+-----------+------------------+-----------+
+    | Image resolution  | Sharpness | Image resolution | Sharpness |
+    +===================+===========+==================+===========+
+    | FRAMESIZE_96x96   | 96x96     | FRAMESIZE_HVGA   | 480x320   |
+    +-------------------+-----------+------------------+-----------+
+    | FRAMESIZE_QQVGA   | 160x120   | FRAMESIZE_VGA    | 640x480   |
+    +-------------------+-----------+------------------+-----------+
+    | FRAMESIZE_QCIF    | 176x144   | FRAMESIZE_SVGA   | 800x600   |
+    +-------------------+-----------+------------------+-----------+
+    | FRAMESIZE_HQVGA   | 240x176   | FRAMESIZE_XGA    | 1024x768  |
+    +-------------------+-----------+------------------+-----------+
+    | FRAMESIZE_240x240 | 240x240   | FRAMESIZE_HD     | 1280x720  |
+    +-------------------+-----------+------------------+-----------+
+    | FRAMESIZE_QVGA    | 320x240   | FRAMESIZE_SXGA   | 1280x1024 |
+    +-------------------+-----------+------------------+-----------+
+    | FRAMESIZE_CIF     | 400x296   | FRAMESIZE_UXGA   | 1600x1200 |
+    +-------------------+-----------+------------------+-----------+
 
 7.3 WiFi Video Car by APP
 **********************************************
@@ -729,7 +733,7 @@ Press “Ctrl” and “R” on the keyboard at the same time will pop up a wind
 .. image:: ../_static/imgs/7_WiFi_Car/Chapter07_26.png
     :align: center
 
-Enter cmd in the pop-up window and click “OK”.
+Enter **cmd** in the pop-up window and click “OK”.
 
 Use the command to enter the storage location of Freenove_4WD_Car_Kit_for_ESP32. Here we assume it is saved in D drive.
 
@@ -782,81 +786,93 @@ The car can be controlled by clicking the client. And it can also be controlled 
 
 The following is the corresponding operation of the buttons and keys.
 
-+-------------------------+-------------+---------------------------+
-|    Button on Client     |     Key     |          Action           |
-+=========================+=============+===========================+
-| ForWard                 | W           | Move                      |
-+-------------------------+-------------+---------------------------+
-| BackWard                | S           | Back off                  |
-+-------------------------+-------------+---------------------------+
-| Turn Left               | A           | Turn left                 |
-+-------------------------+-------------+---------------------------+
-| Turn Right              | D           | Turn right                |
-+-------------------------+-------------+---------------------------+
-| Left                    | left arrow  | Turn camera left          |
-+-------------------------+-------------+---------------------------+
-| Right                   | right arrow | Turn camera right         |
-+-------------------------+-------------+---------------------------+
-| Up                      | up arrow    | Turn camera up            |
-+-------------------------+-------------+---------------------------+
-| Down                    | down arrow  | Turn camera down          |
-+-------------------------+-------------+---------------------------+
-| Home                    | Home        | Turn camera back Home     |
-+-------------------------+-------------+---------------------------+
-| Connect/Disconnect      | C           | On/off Connection         |
-+-------------------------+-------------+---------------------------+
-| Open Video/ Close Video | V           | On/off Video              |
-+-------------------------+-------------+---------------------------+
-| Buzzer                  | Space       | On/off Buzzer             |
-+-------------------------+-------------+---------------------------+
-| Led_Mode 1,2,3,4        | L           | Switch RGB Led Mode       |
-+-------------------------+-------------+---------------------------+
-| Matrix_Mode 1,2,3,4     | K           | Switch Matrix Mode        |
-+-------------------------+-------------+---------------------------+
-| Matrix_Static Mode      | J           | Switch Matrix Static Mode |
-+-------------------------+-------------+---------------------------+
-| Light Car Mode          | R           | On/off Light Car Mode     |
-+-------------------------+-------------+---------------------------+
-| Track Car Mode          | T           | On/off Track Car Mode     |
-+-------------------------+-------------+---------------------------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +-------------------------+-------------+---------------------------+
+    |    Button on Client     |     Key     |          Action           |
+    +=========================+=============+===========================+
+    | ForWard                 | W           | Move                      |
+    +-------------------------+-------------+---------------------------+
+    | BackWard                | S           | Back off                  |
+    +-------------------------+-------------+---------------------------+
+    | Turn Left               | A           | Turn left                 |
+    +-------------------------+-------------+---------------------------+
+    | Turn Right              | D           | Turn right                |
+    +-------------------------+-------------+---------------------------+
+    | Left                    | left arrow  | Turn camera left          |
+    +-------------------------+-------------+---------------------------+
+    | Right                   | right arrow | Turn camera right         |
+    +-------------------------+-------------+---------------------------+
+    | Up                      | up arrow    | Turn camera up            |
+    +-------------------------+-------------+---------------------------+
+    | Down                    | down arrow  | Turn camera down          |
+    +-------------------------+-------------+---------------------------+
+    | Home                    | Home        | Turn camera back Home     |
+    +-------------------------+-------------+---------------------------+
+    | Connect/Disconnect      | C           | On/off Connection         |
+    +-------------------------+-------------+---------------------------+
+    | Open Video/ Close Video | V           | On/off Video              |
+    +-------------------------+-------------+---------------------------+
+    | Buzzer                  | Space       | On/off Buzzer             |
+    +-------------------------+-------------+---------------------------+
+    | Led_Mode 1,2,3,4        | L           | Switch RGB Led Mode       |
+    +-------------------------+-------------+---------------------------+
+    | Matrix_Mode 1,2,3,4     | K           | Switch Matrix Mode        |
+    +-------------------------+-------------+---------------------------+
+    | Matrix_Static Mode      | J           | Switch Matrix Static Mode |
+    +-------------------------+-------------+---------------------------+
+    | Light Car Mode          | R           | On/off Light Car Mode     |
+    +-------------------------+-------------+---------------------------+
+    | Track Car Mode          | T           | On/off Track Car Mode     |
+    +-------------------------+-------------+---------------------------+
 
 The function of SliderBar is below:
 
-+-----------+-------------------------------------------------------------+
-| SliderBar |                          Function                           |
-+===========+=============================================================+
-| Servo 1,2 | SliderBar Servo 1, 2 are used to slightly adjust the angle. |
-|           |                                                             |
-|           | If the servo is not fully centered during installation,     |
-|           |                                                             |
-|           | you can slightly tune it via the SliderBar.                 |
-+-----------+-------------------------------------------------------------+
+.. table::
+    :align: center
+    :class: table-line
+    
+    +-----------+-------------------------------------------------------------+
+    | SliderBar |                          Function                           |
+    +===========+=============================================================+
+    | Servo 1,2 | SliderBar Servo 1, 2 are used to slightly adjust the angle. |
+    |           |                                                             |
+    |           | If the servo is not fully centered during installation,     |
+    |           |                                                             |
+    |           | you can slightly tune it via the SliderBar.                 |
+    +-----------+-------------------------------------------------------------+
 
 Other control information:
 
-+-----------------------+--------------------------------------------------------------------+
-|        Control        |                              Function                              |
-+=======================+====================================================================+
-| IP address Edit box   | Enter IP address of ESP32.                                         |
-+-----------------------+--------------------------------------------------------------------+
-| Power box             | Show power level.                                                  |
-+-----------------------+--------------------------------------------------------------------+
-| N,R,G,B Edit box      | Control the color of LED selected.                                 |
-+-----------------------+--------------------------------------------------------------------+
-| Button “Light On/Off” | Turn on the light seeking function of the car.                     |
-|                       |                                                                    |
-|                       | If WiFi is disconnected, the car will stop moving.                 |
-+-----------------------+--------------------------------------------------------------------+
-| Button “Track On/Off” | Turn on the tracking function of the car. If WiFi is disconnected, |
-|                       |                                                                    |
-|                       | the car will stop moving.                                          |
-+-----------------------+--------------------------------------------------------------------+
-| Left-90°              | Rotate the received video 90° to the left to display.              |
-+-----------------------+--------------------------------------------------------------------+
-| Origin-0°             | Restores the received video to its original display.               |
-+-----------------------+--------------------------------------------------------------------+
-| Right-90°             | Rotate the received video 90° to the right to display.             |
-+-----------------------+--------------------------------------------------------------------+
+.. table::
+    :align: center
+    :class: table-line
+    
+    +-----------------------+--------------------------------------------------------------------+
+    |        Control        |                              Function                              |
+    +=======================+====================================================================+
+    | IP address Edit box   | Enter IP address of ESP32.                                         |
+    +-----------------------+--------------------------------------------------------------------+
+    | Power box             | Show power level.                                                  |
+    +-----------------------+--------------------------------------------------------------------+
+    | N,R,G,B Edit box      | Control the color of LED selected.                                 |
+    +-----------------------+--------------------------------------------------------------------+
+    | Button “Light On/Off” | Turn on the light seeking function of the car.                     |
+    |                       |                                                                    |
+    |                       | If WiFi is disconnected, the car will stop moving.                 |
+    +-----------------------+--------------------------------------------------------------------+
+    | Button “Track On/Off” | Turn on the tracking function of the car. If WiFi is disconnected, |
+    |                       |                                                                    |
+    |                       | the car will stop moving.                                          |
+    +-----------------------+--------------------------------------------------------------------+
+    | Left-90°              | Rotate the received video 90° to the left to display.              |
+    +-----------------------+--------------------------------------------------------------------+
+    | Origin-0°             | Restores the received video to its original display.               |
+    +-----------------------+--------------------------------------------------------------------+
+    | Right-90°             | Rotate the received video 90° to the right to display.             |
+    +-----------------------+--------------------------------------------------------------------+
 
 Run client on macOS system
 ======================================
