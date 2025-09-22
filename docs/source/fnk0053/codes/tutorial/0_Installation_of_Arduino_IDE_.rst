@@ -115,34 +115,62 @@ Arduino Software
 
 Arduino Software (IDE) is used to write and upload the code for Arduino Board.
 
-First, install Arduino Software (IDE): visit https://www.arduino.cc, click "Download" to enter the download page.
+First, install Arduino Software (IDE): visit https://www.arduino.cc/en/software/
 
-.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_17.png
+.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_42.png
     :align: center
 
-Select and download corresponding installer according to your operating system. If you are a windows user, please select the "Windows Installer" to download to install the driver correctly.
+Select and download corresponding installer based on your operating system. If you are a Windows user, please select the "Windows" to download and install the driver correctly.
 
-.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_18.png
+.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_43.png
     :align: center
 
-After the download completes, run the installer. For Windows users, there may pop up an installation dialog box of driver during the installation process. When it popes up, please allow the installation.
+After the downloading completes, run the installer. For Windows users, there may pop up an installation dialog box of driver during the installation process. When it is popped up, please allow the installation.
 
-After installation is completed, an Arduino Software shortcut will be generated in the desktop. Run the Arduino Software.
+After installation is completed, an shortcut will be generated in the desktop.
 
-.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_19.png
+.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_44.png
     :align: center
 
-The interface of Arduino Software is as follows:
+Run it. The interface of the software is as follows:
 
-.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_20.png
+.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_45.png
     :align: center
 
-Programs written with Arduino Software (IDE) are called sketches. These sketches are written in the text editor and saved with the file extension.ino. The editor has features for cutting/pasting and searching/replacing text. The message area gives feedback while saving and exporting and also displays errors. The console displays text output by the Arduino Software (IDE), including complete error messages and other information. The bottom right-hand corner of the window displays the configured board and serial port. The toolbar buttons allow you to verify and upload programs, create, open, and save sketches, and open the serial monitor.
+Programs written with Arduino IDE are called sketches. These sketches are written in a text editor and are saved with the file extension.ino. The editor has features for cutting/pasting and for searching/replacing text. The console displays text output by the Arduino IDE, including complete error messages and other information. The bottom right-hand corner of the window displays the configured board and serial port. The toolbar buttons allow you to verify and upload programs, open the serial monitor, and access the serial plotter.
 
-.. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_21.png
+.. table::
     :align: center
+    :class: table-line
+    :width: 80%
+    
+    +----------------+---------------------------------------------------------------------+
+    | |Chapter00_46| | Verify                                                              |
+    |                |                                                                     |
+    |                | Checks your code for errors compiling it.                           |
+    +----------------+---------------------------------------------------------------------+
+    | |Chapter00_47| | Upload                                                              |
+    |                |                                                                     |
+    |                | Compiles your code and uploads it to the configured board.          |
+    +----------------+---------------------------------------------------------------------+
+    | |Chapter00_48| | Debug                                                               |
+    |                |                                                                     |
+    |                | Troubleshoot code errors and monitor program running status.        |
+    +----------------+---------------------------------------------------------------------+
+    | |Chapter00_49| | Serial Plotter                                                      |
+    |                |                                                                     |
+    |                | Real-time plotting of serial port data charts.                      |
+    +----------------+---------------------------------------------------------------------+
+    | |Chapter00_50| | Serial Monitor                                                      |
+    |                |                                                                     |
+    |                | Used for debugging and communication between devices and computers. |
+    +----------------+---------------------------------------------------------------------+
 
-Additional commands are found within the five menus: File, Edit, Sketch, Tools, Help. The menus are context sensitive, which means only those items relevant to the work currently being carried out are available.
+.. |Chapter00_46| image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_46.png
+.. |Chapter00_47| image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_47.png
+.. |Chapter00_48| image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_48.png
+.. |Chapter00_49| image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_49.png
+.. |Chapter00_50| image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_50.png
 
 Environment Configuration
 ***************************************
@@ -176,7 +204,7 @@ Fifth, select Espressif Systems' ESP32 and select version 3.0.x. Click "INSTALL"
     
     **it takes a while to install the ESP32, make sure your network is stable.**
 
-When finishing installation, click Tools in the Menus again and select Board: "Arduino Uno", and then you can see information of ESP32 Wrover Module. Click " ESP32 Wrover Module" so that the ESP32 programming development environment is configured.
+When finishing installation, click Tools in the Menus again and select Board: "Arduino Uno", and then you can see information of **ESP32 Wrover Module**. Click "**ESP32 Wrover Module**" so that the ESP32 programming development environment is configured.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_27.png
     :align: center
@@ -184,14 +212,14 @@ When finishing installation, click Tools in the Menus again and select Board: "A
 Uploading the First Code
 *************************************
 
-Here we use “00.0_Servo_90” in “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” as an example.
+Here we use “00.0_Servo_90” in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** as an example.
 
 The servo on the car is controlled by PCA9685. Therefore, it is necessary to add the related libararies to Arduino IDE.
 
 How to Add libraries 
 =====================================
 
-We prefer to use method 2 to install libs.
+**We prefer to use method 2 to install libs.**
 
 Method 1
 ----------------------------------------
@@ -258,7 +286,7 @@ When you see the following content, it indicates that the program has been uploa
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_37.png
     :align: center
 
-Note: For macOS users, if the uploading fails, please set the baud rate to 115200 before clicking “Upload Using Programmer”.
+**Note: For macOS users, if the uploading fails, please set the baud rate to 115200 before clicking “Upload Using Programmer”.**
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_38.png
     :align: center
