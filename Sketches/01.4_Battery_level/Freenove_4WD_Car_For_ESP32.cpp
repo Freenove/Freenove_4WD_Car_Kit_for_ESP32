@@ -2,12 +2,12 @@
 #include <Arduino.h>
 #include "Freenove_4WD_Car_For_ESP32.h"
 
-/////////////////////Servo drive area///////////////////////////////////
-int servo_1_offset = 0; //Define the offset variable for servo 1
-int servo_2_offset = 0; //Define the offset variable for servo 2
-PCA9685 PCA9685_SERVO;//Instantiate a PCA9685 object
+// ------------------------ Servo drive area ------------------------ //
+int servo_1_offset = 0; // Define the offset variable for servo 1
+int servo_2_offset = 0; // Define the offset variable for servo 2
+PCA9685 PCA9685_SERVO;  // Instantiate a PCA9685 object
 
-//servo initialization
+// servo initialization
 void Servo_Setup(void)
 {
   Wire.begin(PCA9685_SERVO_SDA, PCA9685_SERVO_SCL);
@@ -15,7 +15,7 @@ void Servo_Setup(void)
   PCA9685_SERVO.setToFrequency(SERVO_FREQUENCY);
 }
 
-//Set the rotation parameters of servo 1, and the parameters are 0-180 degrees
+// Set the rotation parameters of servo 1, and the parameters are 0-180 degrees
 void Servo_1_Angle(float angle)
 {
   if (PCA9685_SERVO.getFrequency() != SERVO_FREQUENCY)
@@ -25,7 +25,7 @@ void Servo_1_Angle(float angle)
   PCA9685_SERVO.setChannelServoPulseDuration(PCA9685_CHANNEL_0, int(angle) + servo_1_offset);
 }
 
-//Set the rotation parameters of servo 2, and the parameters are 0-180 degrees
+// Set the rotation parameters of servo 2, and the parameters are 0-180 degrees
 void Servo_2_Angle(float angle)
 {
   if (PCA9685_SERVO.getFrequency() != SERVO_FREQUENCY)
@@ -35,21 +35,21 @@ void Servo_2_Angle(float angle)
   PCA9685_SERVO.setChannelServoPulseDuration(PCA9685_CHANNEL_1, int(angle) + servo_2_offset);
 }
 
-//Set servo 1 offset
+// Set servo 1 offset
 void Set_Servo_1_Offset(int offset)
 {
   servo_1_offset = offset;
 }
 
-//Set servo 2 offset
+// Set servo 2 offset
 void Set_Servo_2_Offset(int offset)
 {
   servo_2_offset = offset;
 }
 
-//Servo sweep function
-//id = 1: angle_start: 0 - 180; angle_end: 0 - 180.
-//id = 2: angle_start: 90 - 150; angle_end: 90 - 150
+// Servo sweep function
+// id = 1: angle_start: 0 - 180; angle_end: 0 - 180.
+// id = 2: angle_start: 90 - 150; angle_end: 90 - 150
 void Servo_Sweep(int servo_id, int angle_start, int angle_end)
 {
   if (servo_id == 1)
@@ -87,10 +87,10 @@ void Servo_Sweep(int servo_id, int angle_start, int angle_end)
   }
 }
 
-/////////////////////Motor drive area///////////////////////////////////
+// ------------------------ Motor drive area ------------------------ //
 PCA9685 PCA9685_MOTOR;//Instantiate a PCA9685 object to control the motor
 
-//The initialization function for PCA9685
+// The initialization function for PCA9685
 void Motor_Setup(void)
 {
   Wire.begin(PCA9685_MOTOR_SDA, PCA9685_MOTOR_SCL);
@@ -99,7 +99,7 @@ void Motor_Setup(void)
   PCA9685_MOTOR.setToFrequency(MOTOR_FREQUENCY);
 }
 
-//A function to control the car motor
+// A function to control the car motor
 void Motor_Move(int m1_speed, int m2_speed, int m3_speed, int m4_speed)
 {
   if (PCA9685_MOTOR.getFrequency() != MOTOR_FREQUENCY)
@@ -164,8 +164,8 @@ void PCA9685_Close_Com_Address(void)
   Wire.endTransmission();
 }
 
-//////////////////////Buzzer drive area///////////////////////////////////
-//Buzzer initialization
+// ------------------------ Buzzer drive area ------------------------ //
+// Buzzer initialization
 void Buzzer_Setup(void)
 {
   pinMode(PIN_BUZZER, OUTPUT);
@@ -174,7 +174,7 @@ void Buzzer_Setup(void)
   delay(10);
 }
 
-//Buzzer alarm function
+// Buzzer alarm function
 void Buzzer_Alert(int beat, int rebeat)
 {
   beat = constrain(beat, 1, 9);
@@ -193,29 +193,42 @@ void Buzzer_Alert(int beat, int rebeat)
   ledcWriteTone(PIN_BUZZER, 0);
 }
 
-////////////////////Battery drive area/////////////////////////////////////
+// ------------------------ Battery drive area ------------------------ //
 float batteryVoltage = 0;       //Battery voltage variable
 float batteryCoefficient = 4;   //Set the proportional coefficient
+static esp_adc_cal_characteristics_t *adc_chars;
+static const adc_atten_t atten = ADC_ATTEN_DB_12;
+static const adc_unit_t unit = ADC_UNIT_1;
 
-//Gets the battery ADC value
+// Gets the battery ADC value
 int Get_Battery_Voltage_ADC(void)
 {
-  pinMode(PIN_BATTERY, INPUT);
-  int batteryADC = 0;
-  for (int i = 0; i < 5; i++)
+  long batteryADC = 0; 
+  for (int i = 0; i < 5; i++) {
     batteryADC += analogRead(PIN_BATTERY);
+  }
   return batteryADC / 5;
 }
 
-//Get the battery voltage value
+// Get the battery voltage value
 float Get_Battery_Voltage(void)
 {
   int batteryADC = Get_Battery_Voltage_ADC();
-  batteryVoltage = (batteryADC / 4096.0  * 3.9 ) * batteryCoefficient;
+  uint32_t voltage_at_pin_mv = esp_adc_cal_raw_to_voltage(batteryADC, adc_chars);
+  float batteryVoltage = (voltage_at_pin_mv / 1000.0) * batteryCoefficient;
   return batteryVoltage;
 }
 
 void Set_Battery_Coefficient(float coefficient)
 {
   batteryCoefficient = coefficient;
+}
+
+// Battery voltage detection initialization
+void Setup_Battery_Monitor() {
+  // Set ADC resolution to 12-bit
+  analogSetWidth(12);
+  analogSetPinAttenuation(PIN_BATTERY, ADC_11db);
+  adc_chars = (esp_adc_cal_characteristics_t *)calloc(1, sizeof(esp_adc_cal_characteristics_t));
+  esp_adc_cal_characterize(unit, atten, ADC_WIDTH_BIT_12, DEFAULT_VREF, adc_chars);
 }

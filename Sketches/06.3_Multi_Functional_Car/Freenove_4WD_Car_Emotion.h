@@ -21,17 +21,3 @@ void staticEmtions(int emotion);   //show static emotion
 
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

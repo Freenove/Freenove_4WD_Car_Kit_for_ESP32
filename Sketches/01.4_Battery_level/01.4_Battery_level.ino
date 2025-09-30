@@ -8,6 +8,7 @@
 
 void setup() {
   Serial.begin(115200);                     //Set the Serial Baud rate
+  Setup_Battery_Monitor();
 }
 
 void loop() {

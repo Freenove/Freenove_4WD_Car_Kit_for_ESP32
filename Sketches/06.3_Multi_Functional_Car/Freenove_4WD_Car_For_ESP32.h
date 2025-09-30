@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <PCA9685.h>
 #include <PCF8574.h>
+#include "esp_adc_cal.h"
 
 #define MOTOR_1_DIRECTION     1 //If the direction is reversed, change 1 to -1
 #define MOTOR_2_DIRECTION     1 //If the direction is reversed, change 1 to -1
@@ -40,7 +41,16 @@ void Buzzer_Alert(int beat, int rebeat); //Buzzer Alert function
 void Buzzer_Variable(bool enable, int frequency);//Buzzer variable frequency(Parameter 1, enabling signal, parameter 2, frequency value)
 
 ////////////////////Battery drive area/////////////////////////////////////
-float Get_Battery_Voltage(void);        //Get the battery voltage value
+#define PIN_BATTERY        32        //Set the battery detection voltage pin
+#define LOW_VOLTAGE_VALUE  2100      //Set the minimum battery voltage
+#define DEFAULT_VREF    1100
+
+extern float batteryCoefficient;    //Set the proportional coefficient
+
+int Get_Battery_Voltage_ADC(void);   //Gets the battery ADC value
+float Get_Battery_Voltage(void);     //Get the battery voltage value
+void Set_Battery_Coefficient(float coefficient);//Set the partial pressure coefficient
+void Setup_Battery_Monitor(void);
 
 ////////////////////Photosensitive drive area//////////////////////////////
 extern int light_init_value;            //Set the car's initial environment ADC value
@@ -59,12 +69,4 @@ extern int carFlag;
 void Car_SetMode(int mode);//set the car mode
 void Car_Select(int mode);////select it to run car:0-command car，1-light car ，2-track car
 
-
-
 #endif
-
-
-
-
-
-//

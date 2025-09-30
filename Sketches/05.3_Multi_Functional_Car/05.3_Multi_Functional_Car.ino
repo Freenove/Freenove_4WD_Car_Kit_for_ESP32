@@ -98,14 +98,22 @@ void handleControl(unsigned long value)
       Buzzer_Alert(1,1);
       break;
     case 0xFF18E7:// Receive the number '2'
-      emotion_flag=millis()%21;
+      int new_emotion;
+      do {
+          new_emotion = random(21);
+      } while (new_emotion == emotion_flag);
+      emotion_flag = new_emotion;
       staticEmtions(emotion_flag);
       break;
     case 0xFF38C7:// Receive the number '5'
       clearEmtions();
       break;
     case 0xFF42BD:// Receive the number '7'
-      ws2812_flag=millis()%4;
+      int new_ws2812;
+      do {
+          new_ws2812 = random(4);
+      } while (new_ws2812 == ws2812_flag);
+      ws2812_flag = new_ws2812;
       WS2812_Show();
       break;
     case 0xFF4AB5:// Receive the number '8'
@@ -127,4 +135,3 @@ void WS2812_Show()
     strip.setLedColorData(i, m_color[ws2812_flag][0], m_color[ws2812_flag][1], m_color[ws2812_flag][2]);
     strip.show();
 }
-

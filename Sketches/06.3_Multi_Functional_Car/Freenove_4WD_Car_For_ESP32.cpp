@@ -187,25 +187,43 @@ void Buzzer_Alert(int beat, int rebeat)
 }
 
 ////////////////////Battery drive area/////////////////////////////////////
-#define PIN_BATTERY        32        //Set the battery detection voltage pin
-float batteryVoltage     = 0;        //Battery voltage variable
-float batteryCoefficient = 3.7;        //Set the proportional coefficient
+float batteryVoltage     = 0;  //Battery voltage variable
+float batteryCoefficient = 4;  //Set the proportional coefficient
+static esp_adc_cal_characteristics_t *adc_chars;
+static const adc_atten_t atten = ADC_ATTEN_DB_12;
+static const adc_unit_t unit = ADC_UNIT_1;
 
 //Gets the battery ADC value
 int Get_Battery_Voltage_ADC(void)
 {
-  pinMode(PIN_BATTERY, INPUT);
-  int batteryADC = analogRead(PIN_BATTERY);
-  pinMode(PIN_BATTERY, OUTPUT);
-  return batteryADC;
+  long batteryADC = 0; 
+  for (int i = 0; i < 5; i++) {
+    batteryADC += analogRead(PIN_BATTERY);
+  }
+  return batteryADC / 5;
 }
 
 //Get the battery voltage value
 float Get_Battery_Voltage(void)
 {
   int batteryADC = Get_Battery_Voltage_ADC();
-  batteryVoltage = (batteryADC / 4096.0  * 3.9 ) * batteryCoefficient;
+  uint32_t voltage_at_pin_mv = esp_adc_cal_raw_to_voltage(batteryADC, adc_chars);
+  float batteryVoltage = (voltage_at_pin_mv / 1000.0) * batteryCoefficient;
   return batteryVoltage;
+}
+
+void Set_Battery_Coefficient(float coefficient)
+{
+  batteryCoefficient = coefficient;
+}
+
+// Battery voltage detection initialization
+void Setup_Battery_Monitor() {
+  // Set ADC resolution to 12-bit
+  analogSetWidth(12);
+  analogSetPinAttenuation(PIN_BATTERY, ADC_11db);
+  adc_chars = (esp_adc_cal_characteristics_t *)calloc(1, sizeof(esp_adc_cal_characteristics_t));
+  esp_adc_cal_characterize(unit, atten, ADC_WIDTH_BIT_12, DEFAULT_VREF, adc_chars);
 }
 
 /////////////////////Photosensitive drive area//////////////////////////
@@ -338,11 +356,3 @@ void Car_Select(int mode)
     Track_Car(0);
   }
 }
-
-
-
-
-
-
-
-//

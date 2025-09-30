@@ -303,17 +303,3 @@ void Emotion_SetMode(int mode)
     staticEmtions(emotion_flag);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
