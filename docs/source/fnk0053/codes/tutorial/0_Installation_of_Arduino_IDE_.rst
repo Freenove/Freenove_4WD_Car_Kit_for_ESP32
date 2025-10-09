@@ -75,6 +75,8 @@ First, download CH340 driver, click http://www.wch-ic.com/search?q=CH340&t=downl
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_10.png
     :align: center
+    :class: image-border
+    :width: 99%
 
 If you would not like to download the installation package, you can open **“Freenove_4WD_Car_Kit_for_ESP32/CH340”** , we have prepared the installation package.
 
@@ -82,31 +84,43 @@ Second, open the folder **“Freenove_4WD_Car_Kit_for_ESP32/CH340/MAC/”**
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_11.png
     :align: center
-
+    :class: image-border
+    :width: 99%
+    
 Third, click Continue.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_12.png
     :align: center
+    :class: image-border
+    :width: 99%
 
 Fourth, click Install.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_13.png
     :align: center
+    :class: image-border
+    :width: 99%
 
 Then, waiting Finsh.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_14.png
     :align: center
+    :class: image-border
+    :width: 99%
 
 Finally, restart your PC.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_15.png
     :align: center
+    :class: image-border
+    :width: 99%
 
 If you still haven't installed the CH340 by following the steps above, you can view readme.pdf to install it.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_16.png
     :align: center
+    :class: image-border
+    :width: 99%
 
 .. _Arduino:
 
@@ -224,12 +238,12 @@ How to Add libraries
 Method 1
 ----------------------------------------
 
-Open Arduino IDE, click Sketch on Menu bar, move your mouse to Include Library and then click Manage Libraries. 
+Open Arduino IDE, click **Sketch** on Menu bar, move your mouse to **Include Library** and then click **Manage Libraries**. 
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_28.png
     :align: center
 
-There is an input field on the right top of the pop-up window. Enter PCA9685 there and click to install the library boxed in the following picture.
+There is an input field on the right top of the pop-up window. Enter **PCA9685** there and click to **install** the library boxed in the following picture.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_29.png
     :align: center
@@ -271,7 +285,7 @@ Click Tolls on Menu bar, move your mouse to Board: “Arduino Uno”, select ESP
 
 Step 4. Select serial port.
 
-Cilick Tools on Menu bar, move your mouse to Port and select COMx on your computer. The value of COMx varies in different computers, but it won’t affect the download function of ESP32, as long as you select the correct one.
+Cilick Tools on Menu bar, move your mouse to Port and select COMx on your computer. The value of COMx varies in different computers, but it won't affect the download function of ESP32, as long as you select the correct one.
 
 .. image:: ../_static/imgs/0_Installation_of_Arduino_IDE_/Chapter00_35.png
     :align: center

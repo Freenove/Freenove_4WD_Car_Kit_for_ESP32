@@ -1,8 +1,8 @@
 ##############################################################################
-Chapter 2 Module test 
+Chapter 2 Module test
 ##############################################################################
 
-If you have any concerns, please feel free to contact us via support@freenove.com
+**If you have any concerns, please feel free to contact us via** support@freenove.com
 
 2.1 Motor
 **************************************
@@ -59,7 +59,7 @@ Similarly, to control the motor M2, we need to set the 8th and 9th channels of t
 Sketch
 =================================
 
-Next we will download the code to ESP32 to test the motor. Open **“01.1_Car_Move_and_Turn”** folder in “Freenove_4WD_Car_Kit_for_ESP32\Sketches” and double-click “01.1_Car_Move_and_Turn.ino”.
+Next we will download the code to ESP32 to test the motor. Open **“01.1_Car_Move_and_Turn”** folder in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double-click “01.1_Car_Move_and_Turn.ino”.
 
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_04.png
     :align: center
@@ -230,12 +230,12 @@ Active buzzer is easy to use. Generally, it can only make a specific frequency o
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_10.png
     :align: center
 
-The buzzer used in this car is a passive buzzer that can make sounds with different frequence.
+**The buzzer used in this car is a passive buzzer that can make sounds with different frequence.**
 
 Schematic
 =============================
 
-As we can see, the buzzer is controlled by GPIO2 of ESP32. When the buzzer receives PWM signal, NPN will be activated to make the buzzer sound. When the buzzer receives no signal, it will be controlled at low level by R2 and NPN won’t be activated, then the buzzer won’t make any sounds. 
+As we can see, the buzzer is controlled by GPIO2 of ESP32. When the buzzer receives PWM signal, NPN will be activated to make the buzzer sound. When the buzzer receives no signal, it will be controlled at low level by R2 and NPN won't be activated, then the buzzer won't make any sounds. 
 
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_11.png
     :align: center
@@ -245,7 +245,7 @@ Sketch
 
 In this section, we will test the buzzer to make it sound like an alarm.
 
-Open “01.3_Buzzer” folder in the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches”, and then double-click “01.3_Buzzer.ino”.
+Open **“01.3_Buzzer”** folder in the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”**, and then double-click “01.3_Buzzer.ino”.
 
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_12.png
     :align: center
@@ -333,7 +333,7 @@ The voltage acquisition range of GPIO32 on ESP32 is 0-3.3V, while the car is pow
 Sketch
 =========================
 
-In this section, we will use GPIO32 of ESP32 to read the voltage value of the batteries and print it on serial monitor. Open “01.4_Battery_level” folder in “Freenove_4WD_Car_Kit_for_ESP32\Sketches” and then double-click “01.4_Battery_level.ino”.
+In this section, we will use GPIO32 of ESP32 to read the voltage value of the batteries and print it on serial monitor. Open **“01.4_Battery_level”** folder in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and then double-click “01.4_Battery_level.ino”.
 
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_18.png
     :align: center
@@ -494,7 +494,7 @@ Click Sketch and select Add .ZIP Library in Include.
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_27.png
     :align: center
 
-Select “Freenove_VK16K33_Lib_For_ESP32.zip” in the folder Libraries of the folder **“Freenove_4WD_Car_Kit_for_ESP32\\Libraries”**.
+Select **“Freenove_VK16K33_Lib_For_ESP32_v1.0.0.zip”** in the folder Libraries of the folder **“Freenove_4WD_Car_Kit_for_ESP32\\Libraries”**.
 
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_28.png
     :align: center
@@ -526,7 +526,7 @@ Enter “ControlP5” in the input field of the pop-up window. Click the searchi
 
 When the installation finishes, restart Processing.
 
-Open the folder ESP32_Led_Matrix in 01.5_Matrix of the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches”. Here we take Windows as an example. Click to open ESP32_Led_Matrix.pde.
+Open the folder ESP32_Led_Matrix in 01.5_Matrix of the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”**. Here we take Windows as an example. Click to open ESP32_Led_Matrix.pde.
 
 .. image:: ../_static/imgs/2_Module_test_/Chapter02_33.png
     :align: center
@@ -563,7 +563,7 @@ Cick GETCODE to generate array.
 
 The data on the left of the LED matrix are stored together and end with "----x", and the data on the right are stored together and end with "----y". Copy these two sets of dot matrix data and replace the array content in "01.5_Matrix.ino".
 
-Open the folder “01.5_Matrix” in the “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “01.5_Matrix.ino”
+Open the folder “01.5_Matrix” in the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “01.5_Matrix.ino”
 
 Code
 -----------------------------------

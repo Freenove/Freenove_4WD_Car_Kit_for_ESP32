@@ -340,7 +340,7 @@ How to Play
 Add libraries
 ==============================
 
-Open the Arduino IDE, Click Sketch on the menu bar, select Include Library, click Add .ZIP Library...
+Open the **Arduino IDE**, Click Sketch on the menu bar, select Include Library, click Add .ZIP Library...
 
 .. image:: ../_static/imgs/1_Assembling_Smart_Car/Chapter01_32.png
     :align: center
@@ -361,9 +361,9 @@ Connect your computer and ESP32 with a USB cable.
 .. image:: ../_static/imgs/1_Assembling_Smart_Car/Chapter01_34.png
     :align: center
 
-Open the folder Freenove_4WD_Car_Kit_for_ESP32\\Sketches\\05.3_Multi_Functional_Car.
+Open the folder **Freenove_4WD_Car_Kit_for_ESP32\\Sketches\\05.3_Multi_Functional_Car.**
 
-Double-click to open the 05.3_Multi_Functional_Car.ino.
+Double-click to open the **05.3_Multi_Functional_Car.ino.**
 
 Click **Upload**.
 
@@ -378,11 +378,7 @@ In this tutorial, if you find that the car is moving in the opposite direction a
 Step 2 Control the Car
 ---------------------------
 
-After the code is successfully uploaded, turn on the power of the car and use the infrared remote control to
-
-control the car and other functions. The corresponding keys and their functions are shown in the following
-
-table:
+After the code is successfully uploaded, turn on the power of the car and use the infrared remote control to control the car and other functions. The corresponding keys and their functions are shown in the following table:
 
 .. image:: ../_static/imgs/1_Assembling_Smart_Car/Chapter01_37.png
     :align: center

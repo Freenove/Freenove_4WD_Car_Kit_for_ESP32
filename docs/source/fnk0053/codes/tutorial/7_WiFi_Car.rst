@@ -365,9 +365,14 @@ Upload code to ESP32 car and open serial monitor.
 .. image:: ../_static/imgs/7_WiFi_Car/Chapter07_13.png
     :align: center
 
+You can select between AP mode or STA mode in the code using macro definitions.
+
+.. image:: ../_static/imgs/7_WiFi_Car/Chapter07_47.png
+    :align: center
+
 Open mobile APP and select Freenove 4WD Car for ESP32. 
 
-.. image:: ../_static/imgs/7_WiFi_Car/Chapter07_14.png
+.. image:: ../_static/imgs/7_WiFi_Car/Chapter07_10.png
     :align: center
 
 Make sure your mobile phone and ESP32 car are connected to the same router. According to the aforementioned IP address, enter the corresponding IP address, and then click Connect. Tap the button on the screen and you can see the data on the serial monitor.
@@ -396,72 +401,34 @@ Define four pointer variables to store information. Each time, before using, ple
 .. code-block:: c
     :linenos:
 
-    const char* ssid_Router     =   "********";//Modify according to your router name
-    const char* password_Router =   "********";//Modify according to your router password
-    const char* ssid_AP         =   "Sunshine";//ESP32 turns on an AP and calls it Sunshine
-    const char* password_AP     =   "Sunshine";//Set your AP password for ESP32 to Sunshine
+    void WiFi_Init() {
+        ssid_Router     =   "********";    //Modify according to your router name
+        password_Router =   "********";    //Modify according to your router password
+        ssid_AP         =   "Sunshine";    //ESP32 turns on an AP and calls it Sunshine
+        password_AP     =   "Sunshine";    //Set your AP password for ESP32 to Sunshine
+        frame_size      =    FRAMESIZE_CIF;//400*296
+    }
 
 Camara initialization function that assign pins to camera and sets the camera clock frequency, picture quality, picture size and other information. 
 
-.. code-block:: c
+.. literalinclude:: ../../../freenove_Kit/Sketches/06.2_WiFi_Cam_TcpServer/06.2_WiFi_Cam_TcpServer.ino
     :linenos:
-
-    void cameraSetup() {
-        camera_config_t config;
-        config.ledc_channel = LEDC_CHANNEL_0;
-        config.ledc_timer = LEDC_TIMER_0;
-        config.pin_d0 = Y2_GPIO_NUM;
-        config.pin_d1 = Y3_GPIO_NUM;
-        config.pin_d2 = Y4_GPIO_NUM;
-        config.pin_d3 = Y5_GPIO_NUM;
-        config.pin_d4 = Y6_GPIO_NUM;
-        config.pin_d5 = Y7_GPIO_NUM;
-        config.pin_d6 = Y8_GPIO_NUM;
-        config.pin_d7 = Y9_GPIO_NUM;
-        config.pin_xclk = XCLK_GPIO_NUM;
-        config.pin_pclk = PCLK_GPIO_NUM;
-        config.pin_vsync = VSYNC_GPIO_NUM;
-        config.pin_href = HREF_GPIO_NUM;
-        config.pin_sccb_sda = SIOD_GPIO_NUM;
-        config.pin_sccb_scl = SIOC_GPIO_NUM;
-        config.pin_pwdn = PWDN_GPIO_NUM;
-        config.pin_reset = RESET_GPIO_NUM;
-        config.xclk_freq_hz = 20000000;
-        config.pixel_format = PIXFORMAT_JPEG;
-        config.frame_size = FRAMESIZE_VGA;   //clear
-        //	config.frame_size = FRAMESIZE_QVGA;  //ordinary
-        //	config.frame_size = FRAMESIZE_QQVGA; //concision
-        config.jpeg_quality = 10;
-        config.fb_count = 1;
-        esp_err_t err = esp_camera_init(&config); // camera init
-        if (err != ESP_OK) {
-            Serial.printf("Camera init failed with error 0x%x", err);
-            return;
-        }
-        Serial.println("Camera configuration complete!");
-    }
-
-ESP32 is a dual-core processor, which can handle different things at the same time. Usually the loop function of ESP32 runs in the first core area. In this code, we make the command processing run in the 0th core area and the camera data processing in the first core area. Call the disableCore0WDT() function to turn off the watchdog in the 0th core area to avoid program reset caused by the watchdog. Call the xTaskCreateUniversal function to apply to create a task function and let the task function run in the 0th core area.
-
-.. code-block:: c
-    :linenos:
-    
-    disableCore0WDT();
-	//loopTask_Cmd uses core 0.
-	xTaskCreateUniversal(loopTask_Cmd, "loopTask_Cmd", 8192, NULL, 1, &loopTaskHandle, 0);
+    :language: c
+    :lines: 106-140
+    :dedent:
 
 Define a camera image data storage object to store image data.
 
 .. code-block:: c
     :linenos:
-    
+
     camera_fb_t * fb = NULL;
 
 Call the esp_camera_fb_get() function to get the image data and store it in fb. Call the write() function to send the data to the mobile app.
 
 .. code-block:: c
     :linenos:
-    
+
     fb = esp_camera_fb_get();
 	if (fb != NULL) {
 		uint8_t slen[4];
@@ -507,7 +474,7 @@ In this section, we will combine image transmission with controlling the car. Yo
 Sketch
 ==========================================
 
-Open the folder “06.3_Multi_Functional_Car” in Freenove_4WD_Car_Kit_for_ESP32\\Sketches and double click “06.3_Multi_Functional_Car.ino”.
+Open the folder **“06.3_Multi_Functional_Car”** in **Freenove_4WD_Car_Kit_for_ESP32\\Sketches** and double click “06.3_Multi_Functional_Car.ino”.
 
 Before compiling the code, please modify the code according to the name and password of your WiFi.
 
@@ -546,7 +513,7 @@ Before you upload the code each time, you can change the ssid_Router and passwor
 
 .. note::
     
-    "Sunshine" is not connected to the Internet. So if you choose to connect to it, your phone will be disconnected from the Internet. “frame_size” is used to configure the pixel size of the camera. If you don’t know its parameters, you can click here.
+    "Sunshine" is not connected to the Internet. So if you choose to connect to it, your phone will be disconnected from the Internet. “frame_size” is used to configure the pixel size of the camera. If you don't know its parameters, you can click here.
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/06.3_Multi_Functional_Car/06.3_Multi_Functional_Car.ino
     :linenos:
@@ -569,7 +536,7 @@ AP mode starts when the WiFi_Setup parameter is 1. When the parameter WiFi_Setup
 .. literalinclude:: ../../../freenove_Kit/Sketches/06.3_Multi_Functional_Car/06.3_Multi_Functional_Car.ino
     :linenos:
     :language: c
-    :lines: 30-31
+    :lines: 37-38
     :dedent:
 
 Initialize the car's buzzer, LED matrix module, RGB LEDs, WiFi, camera, motor motor, servo, photoresistor  and line tracking modules.
@@ -651,7 +618,7 @@ The camera thread callback function. Each time a connection is established with 
 7.4 WiFi Video Car by PC
 *************************************
 
-In addition to using a mobile phone to control the WiFi video car, we also provide users with a host computer to control the car. In this chapter, the car still uses the code in section 7.3
+In addition to using a mobile phone to control the WiFi video car, we also provide users with a host computer to control the car. In this chapter, the car still uses the :ref:`code <fnk0053/codes/tutorial/7_wifi_car:7.3 wifi video car by app>` in section 7.3
 
 Run client on windows system
 ====================================
@@ -661,7 +628,7 @@ There are two ways to run client on Windows.
 Option 1 Run the executable file directly.
 -----------------------------------------------
 
-Open main.exe in Freenove_4WD_Car_Kit_for_ESP32\\TCP\\Application. 
+Open main.exe in **Freenove_4WD_Car_Kit_for_ESP32\\TCP\\Application**. 
 
 .. image:: ../_static/imgs/7_WiFi_Car/Chapter07_16.png
     :align: center
@@ -832,7 +799,7 @@ The function of SliderBar is below:
 
 .. table::
     :align: center
-    :class: table-line
+    :class: zebra
     
     +-----------+-------------------------------------------------------------+
     | SliderBar |                          Function                           |
@@ -848,7 +815,7 @@ Other control information:
 
 .. table::
     :align: center
-    :class: table-line
+    :class: zebra
     
     +-----------------------+--------------------------------------------------------------------+
     |        Control        |                              Function                              |
@@ -877,7 +844,7 @@ Other control information:
 Run client on macOS system
 ======================================
 
-Here we take MacOS 10.13as an example. To run client on MacOS, you need to install some software and libraries. MacOS 10.13 comes with python2 but not python3. However, the projects in this program need to be run with python3, so you need to install it first. 
+Here we take MacOS 10.13 as an example. To run client on MacOS, you need to install some software and libraries. MacOS 10.13 comes with python2 but not python3. However, the projects in this program need to be run with python3, so you need to install it first. 
 
 Install python3
 --------------------------------------

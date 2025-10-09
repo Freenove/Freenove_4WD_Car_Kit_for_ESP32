@@ -46,7 +46,7 @@ Refer to the following operations:
 
 Each time when you press the infrared remote control, the car will print the received infrared coding value through serial port.
 
-Open the folder “05.1_IR_Receiver” in “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “05.1_IR_Receiver.ino”.
+Open the folder **“05.1_IR_Receiver”** in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “05.1_IR_Receiver.ino”.
 
 Code
 ---------------------------------
@@ -108,7 +108,7 @@ On the basis of the previous section, we use the infrared remote control to cont
 Sketch
 =============================
 
-Open the folder “05.2_IR_Receiver_Car” in the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “05.2_IR_Receiver_Car.ino”.
+Open the folder **“05.2_IR_Receiver_Car”** in the **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “05.2_IR_Receiver_Car.ino”.
 
 Code
 ----------------------------
@@ -147,13 +147,13 @@ Infrared key code value processing function, received the infrared remote contro
     void handleControl(unsigned long value) {
     // Handle the commands
     switch (value) { 
-            case 0xFF02FD:// Receive the number '+'
+            case 0xFF02FD:  // Receive the number '+'
             ...
-            case 0xFF9867:// Receive the number '-'
+            case 0xFF9867:  // Receive the number '-'
             ...
-            case 0xFFE01F:// Receive the number '|<<'
+            case 0xFFE01F:  // Receive the number '|<<'
             ...
-            case 0xFF906F:// Receive the number '>>|'
+            case 0xFF906F:  // Receive the number '>>|'
             ...
             case 0xFF6897:
             ...

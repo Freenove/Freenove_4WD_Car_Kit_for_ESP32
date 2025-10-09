@@ -10,7 +10,7 @@ The photoresistor is very sensitive to the amount of light present. We can use t
 Photoresistor 
 ====================================
 
-A photoresistor is simply a light sensitive resistor. It is an active component that decreases resistance with respect to receiving luminosity (light) on the component's light sensitive surface. A photoresistor’s resistance value will change in proportion to the ambient light detected. With this characteristic, we can use a photoresistor to detect light intensity. The photoresistor and its electronic symbol are as follows.
+A photoresistor is simply a light sensitive resistor. It is an active component that decreases resistance with respect to receiving luminosity (light) on the component's light sensitive surface. A photoresistor's resistance value will change in proportion to the ambient light detected. With this characteristic, we can use a photoresistor to detect light intensity. The photoresistor and its electronic symbol are as follows.
 
 .. image:: ../_static/imgs/4_Light_Tracing_Car/Chapter04_00.png
     :align: center
@@ -91,7 +91,7 @@ Sketch
 
 When car is powered ON, the ADC value of the current environment will be obtained. After initialization, the buzzer will sound once to remind users to test the light-tracing function. When users approach the car with light source the car, the car will turn with the light source.
 
-Open the folder “03.2_Photosensitive_Car” in “Freenove_4WD_Car_Kit_for_ESP32\Sketches” and double click “03.2_Photosensitive_Car.ino”
+Open the folder “03.2_Photosensitive_Car” in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “03.2_Photosensitive_Car.ino”
 
 Code
 -------------------------------------

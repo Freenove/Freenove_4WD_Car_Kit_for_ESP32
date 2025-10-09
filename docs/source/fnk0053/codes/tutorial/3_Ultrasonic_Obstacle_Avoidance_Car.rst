@@ -210,7 +210,7 @@ After starting the car, the ultrasound acquires data in various directions, make
 Sketch
 =================================
 
-Open the folder “02.2_Ultrasonic_Ranging_Car”in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “02.2_Ultrasonic_Ranging_Car.ino”.
+Open the folder “02.2_Ultrasonic_Ranging_Car” in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “02.2_Ultrasonic_Ranging_Car.ino”.
 
 Code
 ----------------------------------

@@ -53,7 +53,7 @@ Click “Sketch”, select “Include Library” and then select Add .ZIP Librar
 .. image:: ../_static/imgs/5_Line_Tracking_Car/Chapter05_00.png
     :align: center
 
-Input “PCF8574” in the searching field and find the library marked below, click “Install”.
+Input **“PCF8574”** in the searching field and find the library marked below, click “Install”.
 
 .. image:: ../_static/imgs/5_Line_Tracking_Car/Chapter05_01.png
     :align: center
@@ -99,7 +99,7 @@ Print the obtained feedback value through serial port.
     }
     Serial.print('\n');
 
-Click “Upload” to upload to code to ESP32 development board. After uploading successfully, click “Serial Monitor”.
+Click **“Upload”** to upload to code to ESP32 development board. After uploading successfully, click “Serial Monitor”.
 
 .. image:: ../_static/imgs/5_Line_Tracking_Car/Chapter05_02.png
     :align: center
@@ -141,7 +141,7 @@ Turn on the power. Use a black tape to build a line and then put your car on it 
 Sketch
 ================================
 
-Open the folder “04.2_Track_Car” in “Freenove_4WD_Car_Kit_for_ESP32\\Sketches” and double click “04.2_Track_Car.ino”.
+Open the folder “04.2_Track_Car” in **“Freenove_4WD_Car_Kit_for_ESP32\\Sketches”** and double click “04.2_Track_Car.ino”.
 
 Code
 --------------------------------
