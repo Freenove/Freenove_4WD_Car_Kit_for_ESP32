@@ -401,13 +401,13 @@ Define four pointer variables to store information. Each time, before using, ple
 .. code-block:: c
     :linenos:
 
-    void WiFi_Init() {
-        ssid_Router     =   "********";    //Modify according to your router name
-        password_Router =   "********";    //Modify according to your router password
-        ssid_AP         =   "Sunshine";    //ESP32 turns on an AP and calls it Sunshine
-        password_AP     =   "Sunshine";    //Set your AP password for ESP32 to Sunshine
-        frame_size      =    FRAMESIZE_CIF;//400*296
-    }
+    // --- AP ---
+    const char* ssid_AP          = "Sunshine";      // ESP32 turns on an AP and calls it Sunshine
+    const char* password_AP      = "Sunshine";      // Set your AP password for ESP32 to Sunshine
+
+    // --- STA ---
+    const char* ssid_Router      = "********";      // Modify according to your router name
+    const char* password_Router  = "********";   // Modify according to your router password
 
 Camara initialization function that assign pins to camera and sets the camera clock frequency, picture quality, picture size and other information. 
 
@@ -544,7 +544,7 @@ Initialize the car's buzzer, LED matrix module, RGB LEDs, WiFi, camera, motor mo
 .. literalinclude:: ../../../freenove_Kit/Sketches/06.3_Multi_Functional_Car/06.3_Multi_Functional_Car.ino
     :linenos:
     :language: c
-    :lines: 33-51
+    :lines: 33-53
     :dedent:
 
 Monitor TCP server port 4000. If a client connects to this port, ESP32 will print prompt messages of WiFi connection on the serial port. After the client connects to this port, it receives information from the client until the client disconnects. When ESP32 detects that the client is disconnected, it closes the TCP connection and prints a WiFi disconnect prompt message.
