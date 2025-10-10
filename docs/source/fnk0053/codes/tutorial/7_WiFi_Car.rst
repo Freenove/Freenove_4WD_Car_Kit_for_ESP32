@@ -417,29 +417,20 @@ Camara initialization function that assign pins to camera and sets the camera cl
     :lines: 106-140
     :dedent:
 
-Define a camera image data storage object to store image data.
-
-.. code-block:: c
-    :linenos:
-
-    camera_fb_t * fb = NULL;
-
 Call the esp_camera_fb_get() function to get the image data and store it in fb. Call the write() function to send the data to the mobile app.
 
 .. code-block:: c
     :linenos:
 
-    fb = esp_camera_fb_get();
-	if (fb != NULL) {
-		uint8_t slen[4];
-		slen[0] = fb->len >> 0;
-		slen[1] = fb->len >> 8;
-		slen[2] = fb->len >> 16;
-		slen[3] = fb->len >> 24;
-		client.write(slen, 4);
-		client.write(fb->buf, fb->len);
-		esp_camera_fb_return(fb);
-	}
+    camera_fb_t* fb = esp_camera_fb_get();
+    if (fb != NULL) {
+        uint8_t slen[4];
+        slen[0] = fb->len >> 0; slen[1] = fb->len >> 8;
+        slen[2] = fb->len >> 16; slen[3] = fb->len >> 24;
+        client.write(slen, 4);
+        client.write(fb->buf, fb->len);
+        esp_camera_fb_return(fb);
+    }
 
 Reference
 ---------------------------
