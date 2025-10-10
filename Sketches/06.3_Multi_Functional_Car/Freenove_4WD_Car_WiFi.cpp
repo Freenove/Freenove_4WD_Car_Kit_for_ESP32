@@ -164,19 +164,3 @@ void camera_hmirror(bool enable)
   sensor_t * s = esp_camera_sensor_get();
   s->set_hmirror(s, enable);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

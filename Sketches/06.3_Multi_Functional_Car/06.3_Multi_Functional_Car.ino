@@ -35,7 +35,7 @@ void setup() {
   Serial.begin(115200);
   Serial.setDebugOutput(true);
   WiFi_Init();              //WiFi paramters initialization
-  WiFi_Setup(0);            //Start AP Mode. If you want to connect to a router, change 1 to 0.
+  WiFi_Setup(1);            //Start AP Mode. If you want to connect to a router, change 1 to 0.
   server_Cmd.begin(4000);   //Start the command server
   server_Camera.begin(7000);//Turn on the camera server
 
@@ -116,8 +116,8 @@ void loop() {
         memset(paramters, 0, sizeof(paramters));
       }
       Emotion_Show(emotion_task_mode);//Led matrix display function
-      WS2812_Show(ws2812_task_mode);//Car color lights display function
-      Car_Select(carFlag);//ESP32 Car mode selection function
+      WS2812_Show(ws2812_task_mode);  //Car color lights display function
+      Car_Select(carFlag);            //ESP32 Car mode selection function
     }
     client.stop();//close the connection:
     Serial.println("Command Client Disconnected.");

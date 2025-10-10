@@ -15,19 +15,4 @@ void WS2812_Set_Color_1(int number, unsigned char color_1,unsigned char color_2,
 void WS2812_Set_Color_2(int number, unsigned char color_1,unsigned char color_2,unsigned char color_3);    //Set the display color2 for WS2812
 void WS2812_SetMode(int mode);                                                                             //WS2812 set mode
 
-
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

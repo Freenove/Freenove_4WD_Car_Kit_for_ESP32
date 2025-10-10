@@ -197,13 +197,3 @@ void WS2812_Show(int mode)
       break;
   }
 }
-
-
-
-
-
-
-
-
-
-//

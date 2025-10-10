@@ -49,12 +49,4 @@ bool cameraSetup(void);                    //Camera initialization
 void camera_vflip(bool enable);            //Set the camera to flip up and down
 void camera_hmirror(bool enable);          //Set the camera to flip left and right
 
-
-
-
 #endif
-
-
-
-
-//

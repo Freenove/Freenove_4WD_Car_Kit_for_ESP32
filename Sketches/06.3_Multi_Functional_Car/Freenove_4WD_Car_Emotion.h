@@ -19,5 +19,4 @@ void Emotion_Show(int mode);       //Display:0-Display off,1-Turn the eyes,2-bli
 void Emotion_SetMode(int mode);    //set the emotion show mode
 void staticEmtions(int emotion);   //show static emotion
 
-
 #endif
