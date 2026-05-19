@@ -115,10 +115,8 @@ void loopTask_WTD(void *pvParameters) {
 }
 
 ///////////////////Camera drive area///////////////////////////////////
-framesize_t frame_size   =   FRAMESIZE_CIF;      //The default is to use the image size of FRAMESIZE CIF
 //Camera initialization
-bool cameraSetup(void)
-{
+bool cameraSetup(void) {
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_1;//From modification
   config.ledc_timer = LEDC_TIMER_1;//From modification
@@ -139,18 +137,57 @@ bool cameraSetup(void)
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 10000000;
-  config.pixel_format = PIXFORMAT_JPEG;
-  config.frame_size = frame_size;
-  config.jpeg_quality = 10;
+  config.frame_size = FRAMESIZE_HQVGA;
+  config.pixel_format = PIXFORMAT_JPEG; // for streaming
+  config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
+  config.fb_location = CAMERA_FB_IN_PSRAM;
+  config.jpeg_quality = 12;
   config.fb_count = 1;
+  
   // camera init
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
-    Serial.printf("Camera init failed with error 0x%x", err);
-    return 0;
+    if(err==ESP_ERR_NOT_SUPPORTED){
+      config.pixel_format = PIXFORMAT_RGB565;
+      esp_err_t err = esp_camera_init(&config);
+      if (err != ESP_OK) {
+        Serial.printf("Camera init failed with error 0x%x", err);
+        return false;
+      }
+    }
   }
-  Serial.println("Camera configuration complete!");
-  return 1;
+
+  sensor_t * s = esp_camera_sensor_get();
+  // drop down frame size for higher initial frame rate
+  uint16_t pid = s->id.PID;
+  if(pid == OV2640_PID){
+    s->set_hmirror(s, 1);
+    s->set_vflip(s, 1);     
+  }
+  else if(pid == OV3660_PID){
+    s->set_hmirror(s, 1);
+    s->set_vflip(s, 0);     
+  }
+  else if(pid == GC2145_PID){
+    s->set_hmirror(s, 0);
+    delay(500);
+    s->set_vflip(s, 1);      
+  }
+  else if(pid == GC0308_PID){
+    s->set_hmirror(s, 0);
+    delay(500);
+    s->set_vflip(s, 1);     
+  }
+  else{
+    s->set_hmirror(s, 1);
+    s->set_vflip(s, 1);       
+  }
+  s->set_brightness(s, 1);  // Slightly increase brightness
+  s->set_saturation(s, 0);  // Reduce saturation
+  s->set_ae_level(s, -3);   // Set exposure compensation level
+
+  Serial.println("Camera initialization complete!");
+  return true;
 }
 //Set the camera to flip up and down
 void camera_vflip(bool enable)

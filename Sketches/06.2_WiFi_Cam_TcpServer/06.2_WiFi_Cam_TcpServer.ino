@@ -23,17 +23,9 @@ const char* password_AP      = "Sunshine";      // Set your AP password for ESP3
 
 // --- STA ---
 const char* ssid_Router      = "********";      // Modify according to your router name
-const char* password_Router  = "********";   // Modify according to your router password
+const char* password_Router  = "********";      // Modify according to your router password
 
 bool videoFlag = false;
-
-// framesize_t frame_size = FRAMESIZE_VGA;     //640*480
-framesize_t frame_size = FRAMESIZE_CIF;     //400*296
-// framesize_t frame_size = FRAMESIZE_HQVGA;   //320*240
-// framesize_t frame_size = FRAMESIZE_HQVGA;   //240*176
-// framesize_t frame_size = FRAMESIZE_QCIF;    //176*144
-// framesize_t frame_size = FRAMESIZE_QQVGA2;  //128*160
-// framesize_t frame_size = FRAMESIZE_QQVGA;   //160*120
 
 WiFiServer server_Cmd(4000);
 WiFiServer server_Camera(7000);
@@ -105,36 +97,74 @@ void loop() {
 
 bool cameraSetup(void) {
   camera_config_t config;
-  config.ledc_channel = LEDC_CHANNEL_1;
-  config.ledc_timer = LEDC_TIMER_1;
-  config.pin_d0 = Y2_GPIO_NUM; 
-  config.pin_d1 = Y3_GPIO_NUM; 
+  config.ledc_channel = LEDC_CHANNEL_0;
+  config.ledc_timer = LEDC_TIMER_0;
+  config.pin_d0 = Y2_GPIO_NUM;
+  config.pin_d1 = Y3_GPIO_NUM;
   config.pin_d2 = Y4_GPIO_NUM;
-  config.pin_d3 = Y5_GPIO_NUM; 
-  config.pin_d4 = Y6_GPIO_NUM; 
+  config.pin_d3 = Y5_GPIO_NUM;
+  config.pin_d4 = Y6_GPIO_NUM;
   config.pin_d5 = Y7_GPIO_NUM;
-  config.pin_d6 = Y8_GPIO_NUM; 
+  config.pin_d6 = Y8_GPIO_NUM;
   config.pin_d7 = Y9_GPIO_NUM;
   config.pin_xclk = XCLK_GPIO_NUM;
-  config.pin_pclk = PCLK_GPIO_NUM; 
-  config.pin_vsync = VSYNC_GPIO_NUM; 
+  config.pin_pclk = PCLK_GPIO_NUM;
+  config.pin_vsync = VSYNC_GPIO_NUM;
   config.pin_href = HREF_GPIO_NUM;
-  config.pin_sccb_sda = SIOD_GPIO_NUM; 
+  config.pin_sccb_sda = SIOD_GPIO_NUM;
   config.pin_sccb_scl = SIOC_GPIO_NUM;
-  config.pin_pwdn = PWDN_GPIO_NUM; 
+  config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 10000000;
-  config.pixel_format = PIXFORMAT_JPEG;
-  config.frame_size = frame_size;
-  config.jpeg_quality = 10;
+  config.frame_size = FRAMESIZE_HQVGA;
+  config.pixel_format = PIXFORMAT_JPEG; // for streaming
+  config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
+  config.fb_location = CAMERA_FB_IN_PSRAM;
+  config.jpeg_quality = 12;
   config.fb_count = 1;
-
+  
   // camera init
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
-    Serial.printf("Camera init failed with error 0x%x\n", err);
-    return false;
+    if(err==ESP_ERR_NOT_SUPPORTED){
+      config.pixel_format = PIXFORMAT_RGB565;
+      esp_err_t err = esp_camera_init(&config);
+      if (err != ESP_OK) {
+        Serial.printf("Camera init failed with error 0x%x", err);
+        return false;
+      }
+    }
   }
+
+  sensor_t * s = esp_camera_sensor_get();
+  // drop down frame size for higher initial frame rate
+  uint16_t pid = s->id.PID;
+  if(pid == OV2640_PID){
+    s->set_hmirror(s, 1);
+    s->set_vflip(s, 1);     
+  }
+  else if(pid == OV3660_PID){
+    s->set_hmirror(s, 1);
+    s->set_vflip(s, 0);     
+  }
+  else if(pid == GC2145_PID){
+    s->set_hmirror(s, 0);
+    delay(500);
+    s->set_vflip(s, 1);      
+  }
+  else if(pid == GC0308_PID){
+    s->set_hmirror(s, 0);
+    delay(500);
+    s->set_vflip(s, 1);     
+  }
+  else{
+    s->set_hmirror(s, 1);
+    s->set_vflip(s, 1);       
+  }
+  s->set_brightness(s, 1);  // Slightly increase brightness
+  s->set_saturation(s, 0);  // Reduce saturation
+  s->set_ae_level(s, -3);   // Set exposure compensation level
+
   Serial.println("Camera initialization complete!");
   return true;
 }
@@ -193,12 +223,35 @@ void loopTask_Camera(void *pvParameters) {
         if (videoFlag) { 
           camera_fb_t* fb = esp_camera_fb_get();
           if (fb != NULL) {
+            size_t jpg_buf_len = 0;
+            uint8_t *jpg_buf = NULL;
+            bool should_free_jpg_buf = false; 
+            if (fb->format != PIXFORMAT_JPEG){
+                bool jpeg_converted = frame2jpg(fb, 80, &jpg_buf, &jpg_buf_len);
+                if (jpeg_converted) {
+                    should_free_jpg_buf = true;
+                } else {
+                    Serial.println("JPEG compression failed");
+                    continue; 
+                }
+            }
+            else {
+                jpg_buf_len = fb->len;
+                jpg_buf = fb->buf;
+                should_free_jpg_buf = false;
+            }
             uint8_t slen[4];
-            slen[0] = fb->len >> 0; slen[1] = fb->len >> 8;
-            slen[2] = fb->len >> 16; slen[3] = fb->len >> 24;
+            slen[0] = jpg_buf_len >> 0;
+            slen[1] = jpg_buf_len >> 8;
+            slen[2] = jpg_buf_len >> 16;
+            slen[3] = jpg_buf_len >> 24;
             client.write(slen, 4);
-            client.write(fb->buf, fb->len);
+            client.write(jpg_buf, jpg_buf_len);
             esp_camera_fb_return(fb);
+            if (should_free_jpg_buf) {
+              if(jpg_buf)
+                free(jpg_buf);
+            }
           } else {
             Serial.println("Failed to get frame");
           }

@@ -44,7 +44,6 @@ void loopTask_WTD(void *pvParameters);
 #define HREF_GPIO_NUM    23
 #define PCLK_GPIO_NUM    22
 
-extern framesize_t frame_size;
 bool cameraSetup(void);                    //Camera initialization
 void camera_vflip(bool enable);            //Set the camera to flip up and down
 void camera_hmirror(bool enable);          //Set the camera to flip left and right

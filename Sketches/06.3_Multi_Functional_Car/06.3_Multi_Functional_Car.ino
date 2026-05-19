@@ -24,7 +24,6 @@ void WiFi_Init() {
   password_Router =   "********";    //Modify according to your router password
   ssid_AP         =   "Sunshine";    //ESP32 turns on an AP and calls it Sunshine
   password_AP     =   "Sunshine";    //Set your AP password for ESP32 to Sunshine
-  frame_size      =    FRAMESIZE_CIF;//400*296
 }
 
 WiFiServer server_Cmd(4000);
@@ -131,21 +130,44 @@ void loopTask_Camera(void *pvParameters) {
     if (client) {//if you get a client
       Serial.println("Camera_Server connected to a client.");
       if (client.connected()) {
-        camera_fb_t * fb = NULL;
         while (client.connected()) {//loop while the client's connected
-          if (videoFlag == 1) {
-            fb = esp_camera_fb_get();
+          if (videoFlag) { 
+            camera_fb_t* fb = esp_camera_fb_get();
             if (fb != NULL) {
+              size_t jpg_buf_len = 0;
+              uint8_t *jpg_buf = NULL;
+              bool should_free_jpg_buf = false; 
+              if (fb->format != PIXFORMAT_JPEG){
+                  bool jpeg_converted = frame2jpg(fb, 80, &jpg_buf, &jpg_buf_len);
+                  if (jpeg_converted) {
+                      should_free_jpg_buf = true;
+                  } else {
+                      Serial.println("JPEG compression failed");
+                      continue; 
+                  }
+              }
+              else {
+                  jpg_buf_len = fb->len;
+                  jpg_buf = fb->buf;
+                  should_free_jpg_buf = false;
+              }
               uint8_t slen[4];
-              slen[0] = fb->len >> 0;
-              slen[1] = fb->len >> 8;
-              slen[2] = fb->len >> 16;
-              slen[3] = fb->len >> 24;
+              slen[0] = jpg_buf_len >> 0;
+              slen[1] = jpg_buf_len >> 8;
+              slen[2] = jpg_buf_len >> 16;
+              slen[3] = jpg_buf_len >> 24;
               client.write(slen, 4);
-              client.write(fb->buf, fb->len);
-              Serial.println("Camera send");
+              client.write(jpg_buf, jpg_buf_len);
               esp_camera_fb_return(fb);
+              if (should_free_jpg_buf) {
+                if(jpg_buf)
+                  free(jpg_buf);
+              }
+            } else {
+              Serial.println("Failed to get frame");
             }
+          } else {
+              delay(100); 
           }
         }
         //close the connection:
