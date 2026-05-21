@@ -222,15 +222,14 @@ void loopTask_Camera(void *pvParameters) {
       while (client.connected()) {
         if (videoFlag) { 
           camera_fb_t* fb = esp_camera_fb_get();
+          size_t jpg_buf_len = 0;
+          uint8_t *jpg_buf = NULL;
           if (fb != NULL) {
-            size_t jpg_buf_len = 0;
-            uint8_t *jpg_buf = NULL;
-            bool should_free_jpg_buf = false; 
             if (fb->format != PIXFORMAT_JPEG){
                 bool jpeg_converted = frame2jpg(fb, 80, &jpg_buf, &jpg_buf_len);
-                if (jpeg_converted) {
-                    should_free_jpg_buf = true;
-                } else {
+                esp_camera_fb_return(fb);
+                fb = NULL;
+                if (!jpeg_converted) {
                     Serial.println("JPEG compression failed");
                     continue; 
                 }
@@ -238,7 +237,6 @@ void loopTask_Camera(void *pvParameters) {
             else {
                 jpg_buf_len = fb->len;
                 jpg_buf = fb->buf;
-                should_free_jpg_buf = false;
             }
             uint8_t slen[4];
             slen[0] = jpg_buf_len >> 0;
@@ -247,13 +245,17 @@ void loopTask_Camera(void *pvParameters) {
             slen[3] = jpg_buf_len >> 24;
             client.write(slen, 4);
             client.write(jpg_buf, jpg_buf_len);
-            esp_camera_fb_return(fb);
-            if (should_free_jpg_buf) {
-              if(jpg_buf)
-                free(jpg_buf);
-            }
           } else {
             Serial.println("Failed to get frame");
+          }
+          if (fb){
+            esp_camera_fb_return(fb);
+            fb = NULL;
+            jpg_buf = NULL;
+          }
+          else if (jpg_buf){
+              free(jpg_buf);
+              jpg_buf = NULL;
           }
         } else {
             delay(100); 
