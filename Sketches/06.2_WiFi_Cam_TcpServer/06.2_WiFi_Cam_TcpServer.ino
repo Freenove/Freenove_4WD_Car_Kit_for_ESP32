@@ -4,7 +4,6 @@
   Auther      : www.freenove.com
   Modification: 2025/09/29
 **********************************************************************/
-
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WiFiAP.h>
@@ -91,10 +90,7 @@ void loop() {
   }
 }
 
-/**
- * @brief Initialize camera
- */
-
+//Initialize camera
 bool cameraSetup(void) {
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
@@ -169,9 +165,7 @@ bool cameraSetup(void) {
   return true;
 }
 
-/**
- * @brief Initialize and start ESP32 WiFi in AP mode
- */
+//Initialize and start ESP32 WiFi in AP mode
 void WiFi_Setup_AP(void) {
   Serial.println("\nConfiguring WiFi in AP (Hotspot) Mode...");
   WiFi.disconnect(true);
@@ -181,12 +175,11 @@ void WiFi_Setup_AP(void) {
   Serial.println("--- WiFi AP Started ---");
   Serial.print("SSID: "); Serial.println(ssid_AP);
   Serial.print("Password: "); Serial.println(password_AP);
-  Serial.print("Connect your App to this IP Address: "); Serial.println(WiFi.softAPIP());
+  Serial.print("Connect your App to this IP Address: "); 
+  Serial.println(WiFi.softAPIP());
 }
 
-/**
- * @brief Initialize and start ESP32 WiFi in STA mode
- */
+//Initialize and start ESP32 WiFi in STA mode
 void WiFi_Setup_STA(void) {
   Serial.println("\nConfiguring WiFi in STA (Router Connection) Mode...");
   WiFi.disconnect(true);
@@ -204,7 +197,8 @@ void WiFi_Setup_STA(void) {
   if (WiFi.status() == WL_CONNECTED) {
     Serial.println("\n--- WiFi STA Connected ---");
     Serial.print("Connected successfully to router!");
-    Serial.print("Connect your App to this IP Address: "); Serial.println(WiFi.localIP());
+    Serial.print("Connect your App to this IP Address: "); 
+    Serial.println(WiFi.localIP());
   } else {
     Serial.println("\n!!! FAILED to connect to router. !!!");
     Serial.println("Please check your ssid_Router and password_Router settings.");
